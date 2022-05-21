@@ -939,12 +939,12 @@ const char descriptor_table_protodef_uif_2eproto[] PROTOBUF_SECTION_VARIABLE(pro
   "\n\023GetServerProperties\022\033.uif.GetServerPro"
   "pertiesReq\032\034.uif.GetServerPropertiesResp"
   "\022>\n\rSetClearColor\022\025.uif.SetClearColorReq"
-  "\032\026.uif.SetClearColorRespB\035Z\033github.com/V"
-  "bitz/uif_sharedb\006proto3"
+  "\032\026.uif.SetClearColorRespB#Z!github.com/V"
+  "bitz/uif_shared/protob\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_uif_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_uif_2eproto = {
-  false, false, 4743, descriptor_table_protodef_uif_2eproto, "uif.proto", 
+  false, false, 4749, descriptor_table_protodef_uif_2eproto, "uif.proto", 
   &descriptor_table_uif_2eproto_once, nullptr, 0, 32,
   schemas, file_default_instances, TableStruct_uif_2eproto::offsets,
   file_level_metadata_uif_2eproto, file_level_enum_descriptors_uif_2eproto, file_level_service_descriptors_uif_2eproto,

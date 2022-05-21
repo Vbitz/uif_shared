@@ -1,7 +1,7 @@
 syntax = "proto3";
 package uif;
 
-option go_package = "github.com/Vbitz/uif_shared";
+option go_package = "github.com/Vbitz/uif_shared/proto";
 
 // This protobuf format is currently in beta with regular breaking changes.
 

@@ -4,7 +4,7 @@
 // - protoc             v3.19.4
 // source: uif.proto
 
-package uif_shared
+package proto
 
 import (
 	context "context"

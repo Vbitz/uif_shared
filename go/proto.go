@@ -1,1 +1,1 @@
-package uif_shared
+package proto
