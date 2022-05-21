@@ -11,4 +11,4 @@ python -m grpc_tools.protoc -I. --python_out=py --grpc_python_out=py uif.proto
 
 $Env:PATH += ";" + $GoBin
 
-. $Protoc --go_out=go --go_opt=paths=source_relative --go-grpc_out=go --go-grpc_opt=paths=source_relative uif.proto
+. $Protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative uif.proto
