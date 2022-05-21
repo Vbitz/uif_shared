@@ -1,0 +1,324 @@
+syntax = "proto3";
+package uif;
+
+// This protobuf format is currently in beta with regular breaking changes.
+
+message Point {
+    float x = 1;
+    float y = 2;
+}
+
+message Rectangle {
+    float x = 1;
+    float y = 2;
+    float width = 3;
+    float height = 4;
+}
+
+message SolidBrush {
+    uint32 color = 1;
+}
+
+message GradientStop {
+    uint32 color = 1;
+    float position = 2;
+}
+
+message LinearGradientBrush {
+    repeated GradientStop stops = 1;
+    Point start = 2;
+    Point end = 3;
+}
+
+message Brush {
+    oneof kind {
+        SolidBrush solid = 1;
+        LinearGradientBrush linear = 2;
+    }
+}
+
+message RectangleNode {
+    Rectangle rect = 1;
+    Brush stroke = 2;
+    bool filled = 3;
+
+    float rounded_radius_x = 4;
+    float rounded_radius_y = 5;
+}
+
+enum FontStyle {
+    FONT_STYLE_NORMAL = 0;
+    FONT_STYLE_OBLIQUE = 1;
+    FONT_STYLE_ITALIC = 2;
+}
+
+enum FontWeight {
+    FONT_WEIGHT_UNDEFINED = 0;
+    FONT_WEIGHT_THIN = 100;
+    FONT_WEIGHT_EXTRA_LIGHT = 200;
+    FONT_WEIGHT_LIGHT = 300;
+    FONT_WEIGHT_SEMI_LIGHT = 350;
+    FONT_WEIGHT_NORMAL = 400;
+    FONT_WEIGHT_MEDIUM = 500;
+    FONT_WEIGHT_SEMI_BOLD = 600;
+    FONT_WEIGHT_BOLD = 700;
+    FONT_WEIGHT_EXTRA_BOLD = 800;
+    FONT_WEIGHT_BLACK = 900;
+    FONT_WEIGHT_EXTRA_BLACK = 950;
+}
+
+enum FontStretch {
+    FONT_STRETCH_UNDEFINED = 0;
+    FONT_STRETCH_ULTRA_CONDENSED = 1;
+    FONT_STRETCH_EXTRA_CONDENSED = 2;
+    FONT_STRETCH_CONDENSED = 3;
+    FONT_STRETCH_SEMI_CONDENSED = 4;
+    FONT_STRETCH_NORMAL = 5;
+    FONT_STRETCH_SEMI_EXPANDED = 6;
+    FONT_STRETCH_EXPANDED = 7;
+    FONT_STRETCH_EXTRA_EXPANDED = 8;
+    FONT_STRETCH_ULTRA_EXPANDED = 9;
+}
+
+enum TextAlign {
+    TEXT_ALIGN_LEADING = 0;
+    TEXT_ALIGN_TRAILING = 1;
+    TEXT_ALIGN_CENTER = 2;
+    TEXT_ALIGN_JUSTIFIED = 3;
+}
+
+enum ParagraphAlign {
+    PARAGRAPH_ALIGN_NEAR = 0;
+    PARAGRAPH_ALIGN_FAR = 1;
+    PARAGRAPH_ALIGN_CENTER = 2;
+}
+
+message TextEditSpan {
+    int32 offset = 1;
+    int32 length = 2;
+
+    oneof edit {
+        string font_name = 4;
+        FontWeight font_weight = 5;
+        FontStyle font_style = 6;
+        FontStretch font_stretch = 7;
+        float font_size = 8;
+        Brush brush = 9;
+        bool underline = 10;
+    }
+}
+
+message TextNode {
+    Rectangle bounds = 1;
+    Brush stroke = 2;
+
+    string text = 3;
+
+    string font_name = 4;
+    FontWeight font_weight = 5;
+    FontStyle font_style = 6;
+    FontStretch font_stretch = 7;
+    float font_size = 8;
+
+    TextAlign text_align = 9;
+    ParagraphAlign paragraph_align = 10;
+
+    repeated TextEditSpan edit_spans = 11;
+}
+
+enum PCBeginKind {
+    PC_BEGINKIND_FILLED = 0;
+    PC_BEGINKIND_HOLLOW = 1;
+}
+
+message PCBegin {
+    PCBeginKind kind = 1;
+    Point pt = 2;
+}
+
+enum PCEndKind {
+    PC_ENDKIND_OPEN = 0;
+    PC_ENDKIND_CLOSED = 1;
+}
+
+message PCEnd {
+    PCEndKind kind = 1;
+}
+
+message PCLineTo {
+    Point pt = 1;
+}
+
+message PCCubicCurve {
+    Point control1 = 1;
+    Point control2 = 2;
+    Point end = 3;
+}
+
+message PCQuadraticCurve {
+    Point control1 = 1;
+    Point end = 2;
+}
+
+message PCArc {
+    float x_radius = 1;
+    float y_radius = 2;
+
+    float x_axis_rotation = 3;
+    bool large_arc_flag = 4;
+    bool sweep_flag = 5;
+
+    Point end = 6;
+}
+
+message PathCommand {
+    oneof cmd {
+        PCBegin begin = 10;
+        PCEnd end = 20;
+
+        PCLineTo line_to = 11;
+
+        PCCubicCurve cubic_to = 12;
+        PCQuadraticCurve quad_to = 13;
+
+        PCArc arc_to = 14;
+    }
+}
+
+message PathNode {
+    repeated PathCommand commands = 1;
+    bool is_filled = 2;
+    Brush stroke = 3;
+}
+
+message EmptyNode {
+
+}
+
+message ClipRectNode {
+    Rectangle rect = 1;
+}
+
+message EditCommand {
+    // A timestamp can optionally be specified to benchmark
+    // the time it takes to apply a edit end to end.
+    // It should be the number of nanoseconds since the epoch.
+    uint64 timestamp = 5;
+
+    // The client id unique to the application making requests.
+    string client_id = 4;
+
+    enum EditKind {
+        // Append a new child.
+        APPEND_CHILD = 0;
+        // Replace an existing node.
+        REPLACE_NODE = 1;
+        // Recursively delete all objects with the specified client id.
+        CLEANUP_CLIENT = 2;
+        // Delete a single object with a given object id.
+        DELETE_OBJECT = 3;
+    }
+    EditKind kind = 1;
+
+    uint64 parent_id = 2;
+    uint64 object_id = 3;
+
+    oneof node {
+        RectangleNode rect = 10;
+        TextNode text = 11;
+        PathNode path = 12;
+        EmptyNode empty = 20;
+        ClipRectNode clip = 21;
+    }
+}
+
+message EditReq {
+    repeated EditCommand commands = 2;
+}
+
+message EditResp {
+
+}
+
+message GetEventsReq {
+    // The client id unique to the application making requests.
+    string client_id = 1;
+}
+
+message CloseEvent {
+    bool closed = 1;
+}
+
+enum MouseButton {
+    MOUSE_BUTTON_NONE = 0;
+    MOUSE_BUTTON_LEFT = 1;
+    MOUSE_BUTTON_MIDDLE = 2;
+    MOUSE_BUTTON_RIGHT = 3;
+    MOUSE_BUTTON_X1 = 4;
+    MOUSE_BUTTON_X2 = 5;
+}
+
+enum MouseState {
+    MOUSE_STATE_NONE = 0;
+    MOUSE_STATE_UP = 1;
+    MOUSE_STATE_DOWN = 2;
+}
+
+message MouseEvent {
+    // The point of the mouse event.
+    MouseButton button = 1;
+    MouseState state = 2;
+    Point location = 3;
+}
+
+enum KeyState {
+    UNSET = 0;
+    KEY_DOWN = 1;
+    KEY_UP = 2;
+}
+
+message KeyboardEvent {
+    // The key code pressed.
+    KeyState state = 1;
+    uint32 key_code = 2;
+}
+
+message TextHitEvent {
+    MouseEvent mouse = 1;
+    uint32 offset = 2;
+    uint32 length = 3;
+    uint64 object_id = 4;
+}
+
+message Event {
+    oneof event {
+        CloseEvent close = 10;
+        MouseEvent mouse = 11;
+        KeyboardEvent key = 12;
+        TextHitEvent textHit = 13;
+    }
+}
+
+message GetServerPropertiesReq {
+
+}
+
+message GetServerPropertiesResp {
+    uint32 window_width = 1;
+    uint32 window_height = 2;
+}
+
+message SetClearColorReq {
+    uint32 color = 1;
+}
+
+message SetClearColorResp {
+
+}
+
+service UIFramework {
+    rpc Edit(EditReq) returns (EditResp);
+    rpc GetEvents(GetEventsReq) returns (stream Event);
+    rpc GetServerProperties(GetServerPropertiesReq) returns (GetServerPropertiesResp);
+    rpc SetClearColor(SetClearColorReq) returns (SetClearColorResp);
+}
