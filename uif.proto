@@ -1,6 +1,8 @@
 syntax = "proto3";
 package uif;
 
+option go_package = "github.com/Vbitz/uif_shared";
+
 // This protobuf format is currently in beta with regular breaking changes.
 
 message Point {
