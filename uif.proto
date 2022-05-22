@@ -44,6 +44,8 @@ message RectangleNode {
     Brush stroke = 2;
     bool filled = 3;
 
+    float stroke_width = 6;
+
     float rounded_radius_x = 4;
     float rounded_radius_y = 5;
 }
@@ -191,6 +193,7 @@ message PathNode {
     repeated PathCommand commands = 1;
     bool is_filled = 2;
     Brush stroke = 3;
+    float stroke_width = 4;
 }
 
 message EmptyNode {

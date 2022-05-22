@@ -102,7 +102,8 @@ constexpr RectangleNode::RectangleNode(
   , stroke_(nullptr)
   , filled_(false)
   , rounded_radius_x_(0)
-  , rounded_radius_y_(0){}
+  , rounded_radius_y_(0)
+  , stroke_width_(0){}
 struct RectangleNodeDefaultTypeInternal {
   constexpr RectangleNodeDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -252,7 +253,8 @@ constexpr PathNode::PathNode(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : commands_()
   , stroke_(nullptr)
-  , is_filled_(false){}
+  , is_filled_(false)
+  , stroke_width_(0){}
 struct PathNodeDefaultTypeInternal {
   constexpr PathNodeDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -520,6 +522,7 @@ const uint32_t TableStruct_uif_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   PROTOBUF_FIELD_OFFSET(::uif::RectangleNode, rect_),
   PROTOBUF_FIELD_OFFSET(::uif::RectangleNode, stroke_),
   PROTOBUF_FIELD_OFFSET(::uif::RectangleNode, filled_),
+  PROTOBUF_FIELD_OFFSET(::uif::RectangleNode, stroke_width_),
   PROTOBUF_FIELD_OFFSET(::uif::RectangleNode, rounded_radius_x_),
   PROTOBUF_FIELD_OFFSET(::uif::RectangleNode, rounded_radius_y_),
   ~0u,  // no _has_bits_
@@ -628,6 +631,7 @@ const uint32_t TableStruct_uif_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   PROTOBUF_FIELD_OFFSET(::uif::PathNode, commands_),
   PROTOBUF_FIELD_OFFSET(::uif::PathNode, is_filled_),
   PROTOBUF_FIELD_OFFSET(::uif::PathNode, stroke_),
+  PROTOBUF_FIELD_OFFSET(::uif::PathNode, stroke_width_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::uif::EmptyNode, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -759,31 +763,31 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 33, -1, -1, sizeof(::uif::LinearGradientBrush)},
   { 42, -1, -1, sizeof(::uif::Brush)},
   { 51, -1, -1, sizeof(::uif::RectangleNode)},
-  { 62, -1, -1, sizeof(::uif::TextEditSpan)},
-  { 78, -1, -1, sizeof(::uif::TextNode)},
-  { 95, -1, -1, sizeof(::uif::PCBegin)},
-  { 103, -1, -1, sizeof(::uif::PCEnd)},
-  { 110, -1, -1, sizeof(::uif::PCLineTo)},
-  { 117, -1, -1, sizeof(::uif::PCCubicCurve)},
-  { 126, -1, -1, sizeof(::uif::PCQuadraticCurve)},
-  { 134, -1, -1, sizeof(::uif::PCArc)},
-  { 146, -1, -1, sizeof(::uif::PathCommand)},
-  { 159, -1, -1, sizeof(::uif::PathNode)},
-  { 168, -1, -1, sizeof(::uif::EmptyNode)},
-  { 174, -1, -1, sizeof(::uif::ClipRectNode)},
-  { 181, -1, -1, sizeof(::uif::EditCommand)},
-  { 198, -1, -1, sizeof(::uif::EditReq)},
-  { 205, -1, -1, sizeof(::uif::EditResp)},
-  { 211, -1, -1, sizeof(::uif::GetEventsReq)},
-  { 218, -1, -1, sizeof(::uif::CloseEvent)},
-  { 225, -1, -1, sizeof(::uif::MouseEvent)},
-  { 234, -1, -1, sizeof(::uif::KeyboardEvent)},
-  { 242, -1, -1, sizeof(::uif::TextHitEvent)},
-  { 252, -1, -1, sizeof(::uif::Event)},
-  { 263, -1, -1, sizeof(::uif::GetServerPropertiesReq)},
-  { 269, -1, -1, sizeof(::uif::GetServerPropertiesResp)},
-  { 277, -1, -1, sizeof(::uif::SetClearColorReq)},
-  { 284, -1, -1, sizeof(::uif::SetClearColorResp)},
+  { 63, -1, -1, sizeof(::uif::TextEditSpan)},
+  { 79, -1, -1, sizeof(::uif::TextNode)},
+  { 96, -1, -1, sizeof(::uif::PCBegin)},
+  { 104, -1, -1, sizeof(::uif::PCEnd)},
+  { 111, -1, -1, sizeof(::uif::PCLineTo)},
+  { 118, -1, -1, sizeof(::uif::PCCubicCurve)},
+  { 127, -1, -1, sizeof(::uif::PCQuadraticCurve)},
+  { 135, -1, -1, sizeof(::uif::PCArc)},
+  { 147, -1, -1, sizeof(::uif::PathCommand)},
+  { 160, -1, -1, sizeof(::uif::PathNode)},
+  { 170, -1, -1, sizeof(::uif::EmptyNode)},
+  { 176, -1, -1, sizeof(::uif::ClipRectNode)},
+  { 183, -1, -1, sizeof(::uif::EditCommand)},
+  { 200, -1, -1, sizeof(::uif::EditReq)},
+  { 207, -1, -1, sizeof(::uif::EditResp)},
+  { 213, -1, -1, sizeof(::uif::GetEventsReq)},
+  { 220, -1, -1, sizeof(::uif::CloseEvent)},
+  { 227, -1, -1, sizeof(::uif::MouseEvent)},
+  { 236, -1, -1, sizeof(::uif::KeyboardEvent)},
+  { 244, -1, -1, sizeof(::uif::TextHitEvent)},
+  { 254, -1, -1, sizeof(::uif::Event)},
+  { 265, -1, -1, sizeof(::uif::GetServerPropertiesReq)},
+  { 271, -1, -1, sizeof(::uif::GetServerPropertiesResp)},
+  { 279, -1, -1, sizeof(::uif::SetClearColorReq)},
+  { 286, -1, -1, sizeof(::uif::SetClearColorResp)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -831,120 +835,121 @@ const char descriptor_table_protodef_uif_2eproto[] PROTOBUF_SECTION_VARIABLE(pro
   "ientStop\022\031\n\005start\030\002 \001(\0132\n.uif.Point\022\027\n\003e"
   "nd\030\003 \001(\0132\n.uif.Point\"]\n\005Brush\022 \n\005solid\030\001"
   " \001(\0132\017.uif.SolidBrushH\000\022*\n\006linear\030\002 \001(\0132"
-  "\030.uif.LinearGradientBrushH\000B\006\n\004kind\"\215\001\n\r"
+  "\030.uif.LinearGradientBrushH\000B\006\n\004kind\"\243\001\n\r"
   "RectangleNode\022\034\n\004rect\030\001 \001(\0132\016.uif.Rectan"
   "gle\022\032\n\006stroke\030\002 \001(\0132\n.uif.Brush\022\016\n\006fille"
-  "d\030\003 \001(\010\022\030\n\020rounded_radius_x\030\004 \001(\002\022\030\n\020rou"
-  "nded_radius_y\030\005 \001(\002\"\212\002\n\014TextEditSpan\022\016\n\006"
-  "offset\030\001 \001(\005\022\016\n\006length\030\002 \001(\005\022\023\n\tfont_nam"
-  "e\030\004 \001(\tH\000\022&\n\013font_weight\030\005 \001(\0162\017.uif.Fon"
-  "tWeightH\000\022$\n\nfont_style\030\006 \001(\0162\016.uif.Font"
-  "StyleH\000\022(\n\014font_stretch\030\007 \001(\0162\020.uif.Font"
-  "StretchH\000\022\023\n\tfont_size\030\010 \001(\002H\000\022\033\n\005brush\030"
-  "\t \001(\0132\n.uif.BrushH\000\022\023\n\tunderline\030\n \001(\010H\000"
-  "B\006\n\004edit\"\345\002\n\010TextNode\022\036\n\006bounds\030\001 \001(\0132\016."
-  "uif.Rectangle\022\032\n\006stroke\030\002 \001(\0132\n.uif.Brus"
-  "h\022\014\n\004text\030\003 \001(\t\022\021\n\tfont_name\030\004 \001(\t\022$\n\013fo"
-  "nt_weight\030\005 \001(\0162\017.uif.FontWeight\022\"\n\nfont"
-  "_style\030\006 \001(\0162\016.uif.FontStyle\022&\n\014font_str"
-  "etch\030\007 \001(\0162\020.uif.FontStretch\022\021\n\tfont_siz"
-  "e\030\010 \001(\002\022\"\n\ntext_align\030\t \001(\0162\016.uif.TextAl"
-  "ign\022,\n\017paragraph_align\030\n \001(\0162\023.uif.Parag"
-  "raphAlign\022%\n\nedit_spans\030\013 \003(\0132\021.uif.Text"
-  "EditSpan\"A\n\007PCBegin\022\036\n\004kind\030\001 \001(\0162\020.uif."
-  "PCBeginKind\022\026\n\002pt\030\002 \001(\0132\n.uif.Point\"%\n\005P"
-  "CEnd\022\034\n\004kind\030\001 \001(\0162\016.uif.PCEndKind\"\"\n\010PC"
-  "LineTo\022\026\n\002pt\030\001 \001(\0132\n.uif.Point\"c\n\014PCCubi"
-  "cCurve\022\034\n\010control1\030\001 \001(\0132\n.uif.Point\022\034\n\010"
-  "control2\030\002 \001(\0132\n.uif.Point\022\027\n\003end\030\003 \001(\0132"
-  "\n.uif.Point\"I\n\020PCQuadraticCurve\022\034\n\010contr"
-  "ol1\030\001 \001(\0132\n.uif.Point\022\027\n\003end\030\002 \001(\0132\n.uif"
-  ".Point\"\211\001\n\005PCArc\022\020\n\010x_radius\030\001 \001(\002\022\020\n\010y_"
-  "radius\030\002 \001(\002\022\027\n\017x_axis_rotation\030\003 \001(\002\022\026\n"
-  "\016large_arc_flag\030\004 \001(\010\022\022\n\nsweep_flag\030\005 \001("
-  "\010\022\027\n\003end\030\006 \001(\0132\n.uif.Point\"\337\001\n\013PathComma"
-  "nd\022\035\n\005begin\030\n \001(\0132\014.uif.PCBeginH\000\022\031\n\003end"
-  "\030\024 \001(\0132\n.uif.PCEndH\000\022 \n\007line_to\030\013 \001(\0132\r."
-  "uif.PCLineToH\000\022%\n\010cubic_to\030\014 \001(\0132\021.uif.P"
-  "CCubicCurveH\000\022(\n\007quad_to\030\r \001(\0132\025.uif.PCQ"
-  "uadraticCurveH\000\022\034\n\006arc_to\030\016 \001(\0132\n.uif.PC"
-  "ArcH\000B\005\n\003cmd\"]\n\010PathNode\022\"\n\010commands\030\001 \003"
-  "(\0132\020.uif.PathCommand\022\021\n\tis_filled\030\002 \001(\010\022"
-  "\032\n\006stroke\030\003 \001(\0132\n.uif.Brush\"\013\n\tEmptyNode"
-  "\",\n\014ClipRectNode\022\034\n\004rect\030\001 \001(\0132\016.uif.Rec"
-  "tangle\"\207\003\n\013EditCommand\022\021\n\ttimestamp\030\005 \001("
-  "\004\022\021\n\tclient_id\030\004 \001(\t\022\'\n\004kind\030\001 \001(\0162\031.uif"
-  ".EditCommand.EditKind\022\021\n\tparent_id\030\002 \001(\004"
-  "\022\021\n\tobject_id\030\003 \001(\004\022\"\n\004rect\030\n \001(\0132\022.uif."
-  "RectangleNodeH\000\022\035\n\004text\030\013 \001(\0132\r.uif.Text"
-  "NodeH\000\022\035\n\004path\030\014 \001(\0132\r.uif.PathNodeH\000\022\037\n"
-  "\005empty\030\024 \001(\0132\016.uif.EmptyNodeH\000\022!\n\004clip\030\025"
-  " \001(\0132\021.uif.ClipRectNodeH\000\"U\n\010EditKind\022\020\n"
-  "\014APPEND_CHILD\020\000\022\020\n\014REPLACE_NODE\020\001\022\022\n\016CLE"
-  "ANUP_CLIENT\020\002\022\021\n\rDELETE_OBJECT\020\003B\006\n\004node"
-  "\"-\n\007EditReq\022\"\n\010commands\030\002 \003(\0132\020.uif.Edit"
-  "Command\"\n\n\010EditResp\"!\n\014GetEventsReq\022\021\n\tc"
-  "lient_id\030\001 \001(\t\"\034\n\nCloseEvent\022\016\n\006closed\030\001"
-  " \001(\010\"l\n\nMouseEvent\022 \n\006button\030\001 \001(\0162\020.uif"
-  ".MouseButton\022\036\n\005state\030\002 \001(\0162\017.uif.MouseS"
-  "tate\022\034\n\010location\030\003 \001(\0132\n.uif.Point\"\?\n\rKe"
-  "yboardEvent\022\034\n\005state\030\001 \001(\0162\r.uif.KeyStat"
-  "e\022\020\n\010key_code\030\002 \001(\r\"a\n\014TextHitEvent\022\036\n\005m"
-  "ouse\030\001 \001(\0132\017.uif.MouseEvent\022\016\n\006offset\030\002 "
-  "\001(\r\022\016\n\006length\030\003 \001(\r\022\021\n\tobject_id\030\004 \001(\004\"\235"
-  "\001\n\005Event\022 \n\005close\030\n \001(\0132\017.uif.CloseEvent"
-  "H\000\022 \n\005mouse\030\013 \001(\0132\017.uif.MouseEventH\000\022!\n\003"
-  "key\030\014 \001(\0132\022.uif.KeyboardEventH\000\022$\n\007textH"
-  "it\030\r \001(\0132\021.uif.TextHitEventH\000B\007\n\005event\"\030"
-  "\n\026GetServerPropertiesReq\"F\n\027GetServerPro"
-  "pertiesResp\022\024\n\014window_width\030\001 \001(\r\022\025\n\rwin"
-  "dow_height\030\002 \001(\r\"!\n\020SetClearColorReq\022\r\n\005"
-  "color\030\001 \001(\r\"\023\n\021SetClearColorResp*Q\n\tFont"
-  "Style\022\025\n\021FONT_STYLE_NORMAL\020\000\022\026\n\022FONT_STY"
-  "LE_OBLIQUE\020\001\022\025\n\021FONT_STYLE_ITALIC\020\002*\310\002\n\n"
-  "FontWeight\022\031\n\025FONT_WEIGHT_UNDEFINED\020\000\022\024\n"
-  "\020FONT_WEIGHT_THIN\020d\022\034\n\027FONT_WEIGHT_EXTRA"
-  "_LIGHT\020\310\001\022\026\n\021FONT_WEIGHT_LIGHT\020\254\002\022\033\n\026FON"
-  "T_WEIGHT_SEMI_LIGHT\020\336\002\022\027\n\022FONT_WEIGHT_NO"
-  "RMAL\020\220\003\022\027\n\022FONT_WEIGHT_MEDIUM\020\364\003\022\032\n\025FONT"
-  "_WEIGHT_SEMI_BOLD\020\330\004\022\025\n\020FONT_WEIGHT_BOLD"
-  "\020\274\005\022\033\n\026FONT_WEIGHT_EXTRA_BOLD\020\240\006\022\026\n\021FONT"
-  "_WEIGHT_BLACK\020\204\007\022\034\n\027FONT_WEIGHT_EXTRA_BL"
-  "ACK\020\266\007*\300\002\n\013FontStretch\022\032\n\026FONT_STRETCH_U"
-  "NDEFINED\020\000\022 \n\034FONT_STRETCH_ULTRA_CONDENS"
-  "ED\020\001\022 \n\034FONT_STRETCH_EXTRA_CONDENSED\020\002\022\032"
-  "\n\026FONT_STRETCH_CONDENSED\020\003\022\037\n\033FONT_STRET"
-  "CH_SEMI_CONDENSED\020\004\022\027\n\023FONT_STRETCH_NORM"
-  "AL\020\005\022\036\n\032FONT_STRETCH_SEMI_EXPANDED\020\006\022\031\n\025"
-  "FONT_STRETCH_EXPANDED\020\007\022\037\n\033FONT_STRETCH_"
-  "EXTRA_EXPANDED\020\010\022\037\n\033FONT_STRETCH_ULTRA_E"
-  "XPANDED\020\t*m\n\tTextAlign\022\026\n\022TEXT_ALIGN_LEA"
-  "DING\020\000\022\027\n\023TEXT_ALIGN_TRAILING\020\001\022\025\n\021TEXT_"
-  "ALIGN_CENTER\020\002\022\030\n\024TEXT_ALIGN_JUSTIFIED\020\003"
-  "*_\n\016ParagraphAlign\022\030\n\024PARAGRAPH_ALIGN_NE"
-  "AR\020\000\022\027\n\023PARAGRAPH_ALIGN_FAR\020\001\022\032\n\026PARAGRA"
-  "PH_ALIGN_CENTER\020\002*\?\n\013PCBeginKind\022\027\n\023PC_B"
-  "EGINKIND_FILLED\020\000\022\027\n\023PC_BEGINKIND_HOLLOW"
-  "\020\001*7\n\tPCEndKind\022\023\n\017PC_ENDKIND_OPEN\020\000\022\025\n\021"
-  "PC_ENDKIND_CLOSED\020\001*\226\001\n\013MouseButton\022\025\n\021M"
-  "OUSE_BUTTON_NONE\020\000\022\025\n\021MOUSE_BUTTON_LEFT\020"
-  "\001\022\027\n\023MOUSE_BUTTON_MIDDLE\020\002\022\026\n\022MOUSE_BUTT"
-  "ON_RIGHT\020\003\022\023\n\017MOUSE_BUTTON_X1\020\004\022\023\n\017MOUSE"
-  "_BUTTON_X2\020\005*L\n\nMouseState\022\024\n\020MOUSE_STAT"
-  "E_NONE\020\000\022\022\n\016MOUSE_STATE_UP\020\001\022\024\n\020MOUSE_ST"
-  "ATE_DOWN\020\002*/\n\010KeyState\022\t\n\005UNSET\020\000\022\014\n\010KEY"
-  "_DOWN\020\001\022\n\n\006KEY_UP\020\0022\362\001\n\013UIFramework\022#\n\004E"
-  "dit\022\014.uif.EditReq\032\r.uif.EditResp\022,\n\tGetE"
-  "vents\022\021.uif.GetEventsReq\032\n.uif.Event0\001\022P"
-  "\n\023GetServerProperties\022\033.uif.GetServerPro"
-  "pertiesReq\032\034.uif.GetServerPropertiesResp"
-  "\022>\n\rSetClearColor\022\025.uif.SetClearColorReq"
-  "\032\026.uif.SetClearColorRespB\035Z\033github.com/V"
-  "bitz/uif_sharedb\006proto3"
+  "d\030\003 \001(\010\022\024\n\014stroke_width\030\006 \001(\002\022\030\n\020rounded"
+  "_radius_x\030\004 \001(\002\022\030\n\020rounded_radius_y\030\005 \001("
+  "\002\"\212\002\n\014TextEditSpan\022\016\n\006offset\030\001 \001(\005\022\016\n\006le"
+  "ngth\030\002 \001(\005\022\023\n\tfont_name\030\004 \001(\tH\000\022&\n\013font_"
+  "weight\030\005 \001(\0162\017.uif.FontWeightH\000\022$\n\nfont_"
+  "style\030\006 \001(\0162\016.uif.FontStyleH\000\022(\n\014font_st"
+  "retch\030\007 \001(\0162\020.uif.FontStretchH\000\022\023\n\tfont_"
+  "size\030\010 \001(\002H\000\022\033\n\005brush\030\t \001(\0132\n.uif.BrushH"
+  "\000\022\023\n\tunderline\030\n \001(\010H\000B\006\n\004edit\"\345\002\n\010TextN"
+  "ode\022\036\n\006bounds\030\001 \001(\0132\016.uif.Rectangle\022\032\n\006s"
+  "troke\030\002 \001(\0132\n.uif.Brush\022\014\n\004text\030\003 \001(\t\022\021\n"
+  "\tfont_name\030\004 \001(\t\022$\n\013font_weight\030\005 \001(\0162\017."
+  "uif.FontWeight\022\"\n\nfont_style\030\006 \001(\0162\016.uif"
+  ".FontStyle\022&\n\014font_stretch\030\007 \001(\0162\020.uif.F"
+  "ontStretch\022\021\n\tfont_size\030\010 \001(\002\022\"\n\ntext_al"
+  "ign\030\t \001(\0162\016.uif.TextAlign\022,\n\017paragraph_a"
+  "lign\030\n \001(\0162\023.uif.ParagraphAlign\022%\n\nedit_"
+  "spans\030\013 \003(\0132\021.uif.TextEditSpan\"A\n\007PCBegi"
+  "n\022\036\n\004kind\030\001 \001(\0162\020.uif.PCBeginKind\022\026\n\002pt\030"
+  "\002 \001(\0132\n.uif.Point\"%\n\005PCEnd\022\034\n\004kind\030\001 \001(\016"
+  "2\016.uif.PCEndKind\"\"\n\010PCLineTo\022\026\n\002pt\030\001 \001(\013"
+  "2\n.uif.Point\"c\n\014PCCubicCurve\022\034\n\010control1"
+  "\030\001 \001(\0132\n.uif.Point\022\034\n\010control2\030\002 \001(\0132\n.u"
+  "if.Point\022\027\n\003end\030\003 \001(\0132\n.uif.Point\"I\n\020PCQ"
+  "uadraticCurve\022\034\n\010control1\030\001 \001(\0132\n.uif.Po"
+  "int\022\027\n\003end\030\002 \001(\0132\n.uif.Point\"\211\001\n\005PCArc\022\020"
+  "\n\010x_radius\030\001 \001(\002\022\020\n\010y_radius\030\002 \001(\002\022\027\n\017x_"
+  "axis_rotation\030\003 \001(\002\022\026\n\016large_arc_flag\030\004 "
+  "\001(\010\022\022\n\nsweep_flag\030\005 \001(\010\022\027\n\003end\030\006 \001(\0132\n.u"
+  "if.Point\"\337\001\n\013PathCommand\022\035\n\005begin\030\n \001(\0132"
+  "\014.uif.PCBeginH\000\022\031\n\003end\030\024 \001(\0132\n.uif.PCEnd"
+  "H\000\022 \n\007line_to\030\013 \001(\0132\r.uif.PCLineToH\000\022%\n\010"
+  "cubic_to\030\014 \001(\0132\021.uif.PCCubicCurveH\000\022(\n\007q"
+  "uad_to\030\r \001(\0132\025.uif.PCQuadraticCurveH\000\022\034\n"
+  "\006arc_to\030\016 \001(\0132\n.uif.PCArcH\000B\005\n\003cmd\"s\n\010Pa"
+  "thNode\022\"\n\010commands\030\001 \003(\0132\020.uif.PathComma"
+  "nd\022\021\n\tis_filled\030\002 \001(\010\022\032\n\006stroke\030\003 \001(\0132\n."
+  "uif.Brush\022\024\n\014stroke_width\030\004 \001(\002\"\013\n\tEmpty"
+  "Node\",\n\014ClipRectNode\022\034\n\004rect\030\001 \001(\0132\016.uif"
+  ".Rectangle\"\207\003\n\013EditCommand\022\021\n\ttimestamp\030"
+  "\005 \001(\004\022\021\n\tclient_id\030\004 \001(\t\022\'\n\004kind\030\001 \001(\0162\031"
+  ".uif.EditCommand.EditKind\022\021\n\tparent_id\030\002"
+  " \001(\004\022\021\n\tobject_id\030\003 \001(\004\022\"\n\004rect\030\n \001(\0132\022."
+  "uif.RectangleNodeH\000\022\035\n\004text\030\013 \001(\0132\r.uif."
+  "TextNodeH\000\022\035\n\004path\030\014 \001(\0132\r.uif.PathNodeH"
+  "\000\022\037\n\005empty\030\024 \001(\0132\016.uif.EmptyNodeH\000\022!\n\004cl"
+  "ip\030\025 \001(\0132\021.uif.ClipRectNodeH\000\"U\n\010EditKin"
+  "d\022\020\n\014APPEND_CHILD\020\000\022\020\n\014REPLACE_NODE\020\001\022\022\n"
+  "\016CLEANUP_CLIENT\020\002\022\021\n\rDELETE_OBJECT\020\003B\006\n\004"
+  "node\"-\n\007EditReq\022\"\n\010commands\030\002 \003(\0132\020.uif."
+  "EditCommand\"\n\n\010EditResp\"!\n\014GetEventsReq\022"
+  "\021\n\tclient_id\030\001 \001(\t\"\034\n\nCloseEvent\022\016\n\006clos"
+  "ed\030\001 \001(\010\"l\n\nMouseEvent\022 \n\006button\030\001 \001(\0162\020"
+  ".uif.MouseButton\022\036\n\005state\030\002 \001(\0162\017.uif.Mo"
+  "useState\022\034\n\010location\030\003 \001(\0132\n.uif.Point\"\?"
+  "\n\rKeyboardEvent\022\034\n\005state\030\001 \001(\0162\r.uif.Key"
+  "State\022\020\n\010key_code\030\002 \001(\r\"a\n\014TextHitEvent\022"
+  "\036\n\005mouse\030\001 \001(\0132\017.uif.MouseEvent\022\016\n\006offse"
+  "t\030\002 \001(\r\022\016\n\006length\030\003 \001(\r\022\021\n\tobject_id\030\004 \001"
+  "(\004\"\235\001\n\005Event\022 \n\005close\030\n \001(\0132\017.uif.CloseE"
+  "ventH\000\022 \n\005mouse\030\013 \001(\0132\017.uif.MouseEventH\000"
+  "\022!\n\003key\030\014 \001(\0132\022.uif.KeyboardEventH\000\022$\n\007t"
+  "extHit\030\r \001(\0132\021.uif.TextHitEventH\000B\007\n\005eve"
+  "nt\"\030\n\026GetServerPropertiesReq\"F\n\027GetServe"
+  "rPropertiesResp\022\024\n\014window_width\030\001 \001(\r\022\025\n"
+  "\rwindow_height\030\002 \001(\r\"!\n\020SetClearColorReq"
+  "\022\r\n\005color\030\001 \001(\r\"\023\n\021SetClearColorResp*Q\n\t"
+  "FontStyle\022\025\n\021FONT_STYLE_NORMAL\020\000\022\026\n\022FONT"
+  "_STYLE_OBLIQUE\020\001\022\025\n\021FONT_STYLE_ITALIC\020\002*"
+  "\310\002\n\nFontWeight\022\031\n\025FONT_WEIGHT_UNDEFINED\020"
+  "\000\022\024\n\020FONT_WEIGHT_THIN\020d\022\034\n\027FONT_WEIGHT_E"
+  "XTRA_LIGHT\020\310\001\022\026\n\021FONT_WEIGHT_LIGHT\020\254\002\022\033\n"
+  "\026FONT_WEIGHT_SEMI_LIGHT\020\336\002\022\027\n\022FONT_WEIGH"
+  "T_NORMAL\020\220\003\022\027\n\022FONT_WEIGHT_MEDIUM\020\364\003\022\032\n\025"
+  "FONT_WEIGHT_SEMI_BOLD\020\330\004\022\025\n\020FONT_WEIGHT_"
+  "BOLD\020\274\005\022\033\n\026FONT_WEIGHT_EXTRA_BOLD\020\240\006\022\026\n\021"
+  "FONT_WEIGHT_BLACK\020\204\007\022\034\n\027FONT_WEIGHT_EXTR"
+  "A_BLACK\020\266\007*\300\002\n\013FontStretch\022\032\n\026FONT_STRET"
+  "CH_UNDEFINED\020\000\022 \n\034FONT_STRETCH_ULTRA_CON"
+  "DENSED\020\001\022 \n\034FONT_STRETCH_EXTRA_CONDENSED"
+  "\020\002\022\032\n\026FONT_STRETCH_CONDENSED\020\003\022\037\n\033FONT_S"
+  "TRETCH_SEMI_CONDENSED\020\004\022\027\n\023FONT_STRETCH_"
+  "NORMAL\020\005\022\036\n\032FONT_STRETCH_SEMI_EXPANDED\020\006"
+  "\022\031\n\025FONT_STRETCH_EXPANDED\020\007\022\037\n\033FONT_STRE"
+  "TCH_EXTRA_EXPANDED\020\010\022\037\n\033FONT_STRETCH_ULT"
+  "RA_EXPANDED\020\t*m\n\tTextAlign\022\026\n\022TEXT_ALIGN"
+  "_LEADING\020\000\022\027\n\023TEXT_ALIGN_TRAILING\020\001\022\025\n\021T"
+  "EXT_ALIGN_CENTER\020\002\022\030\n\024TEXT_ALIGN_JUSTIFI"
+  "ED\020\003*_\n\016ParagraphAlign\022\030\n\024PARAGRAPH_ALIG"
+  "N_NEAR\020\000\022\027\n\023PARAGRAPH_ALIGN_FAR\020\001\022\032\n\026PAR"
+  "AGRAPH_ALIGN_CENTER\020\002*\?\n\013PCBeginKind\022\027\n\023"
+  "PC_BEGINKIND_FILLED\020\000\022\027\n\023PC_BEGINKIND_HO"
+  "LLOW\020\001*7\n\tPCEndKind\022\023\n\017PC_ENDKIND_OPEN\020\000"
+  "\022\025\n\021PC_ENDKIND_CLOSED\020\001*\226\001\n\013MouseButton\022"
+  "\025\n\021MOUSE_BUTTON_NONE\020\000\022\025\n\021MOUSE_BUTTON_L"
+  "EFT\020\001\022\027\n\023MOUSE_BUTTON_MIDDLE\020\002\022\026\n\022MOUSE_"
+  "BUTTON_RIGHT\020\003\022\023\n\017MOUSE_BUTTON_X1\020\004\022\023\n\017M"
+  "OUSE_BUTTON_X2\020\005*L\n\nMouseState\022\024\n\020MOUSE_"
+  "STATE_NONE\020\000\022\022\n\016MOUSE_STATE_UP\020\001\022\024\n\020MOUS"
+  "E_STATE_DOWN\020\002*/\n\010KeyState\022\t\n\005UNSET\020\000\022\014\n"
+  "\010KEY_DOWN\020\001\022\n\n\006KEY_UP\020\0022\362\001\n\013UIFramework\022"
+  "#\n\004Edit\022\014.uif.EditReq\032\r.uif.EditResp\022,\n\t"
+  "GetEvents\022\021.uif.GetEventsReq\032\n.uif.Event"
+  "0\001\022P\n\023GetServerProperties\022\033.uif.GetServe"
+  "rPropertiesReq\032\034.uif.GetServerProperties"
+  "Resp\022>\n\rSetClearColor\022\025.uif.SetClearColo"
+  "rReq\032\026.uif.SetClearColorRespB\035Z\033github.c"
+  "om/Vbitz/uif_sharedb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_uif_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_uif_2eproto = {
-  false, false, 4743, descriptor_table_protodef_uif_2eproto, "uif.proto", 
+  false, false, 4787, descriptor_table_protodef_uif_2eproto, "uif.proto", 
   &descriptor_table_uif_2eproto_once, nullptr, 0, 32,
   schemas, file_default_instances, TableStruct_uif_2eproto::offsets,
   file_level_metadata_uif_2eproto, file_level_enum_descriptors_uif_2eproto, file_level_service_descriptors_uif_2eproto,
@@ -2708,16 +2713,16 @@ RectangleNode::RectangleNode(const RectangleNode& from)
     stroke_ = nullptr;
   }
   ::memcpy(&filled_, &from.filled_,
-    static_cast<size_t>(reinterpret_cast<char*>(&rounded_radius_y_) -
-    reinterpret_cast<char*>(&filled_)) + sizeof(rounded_radius_y_));
+    static_cast<size_t>(reinterpret_cast<char*>(&stroke_width_) -
+    reinterpret_cast<char*>(&filled_)) + sizeof(stroke_width_));
   // @@protoc_insertion_point(copy_constructor:uif.RectangleNode)
 }
 
 inline void RectangleNode::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&rect_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&rounded_radius_y_) -
-    reinterpret_cast<char*>(&rect_)) + sizeof(rounded_radius_y_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&stroke_width_) -
+    reinterpret_cast<char*>(&rect_)) + sizeof(stroke_width_));
 }
 
 RectangleNode::~RectangleNode() {
@@ -2758,8 +2763,8 @@ void RectangleNode::Clear() {
   }
   stroke_ = nullptr;
   ::memset(&filled_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rounded_radius_y_) -
-      reinterpret_cast<char*>(&filled_)) + sizeof(rounded_radius_y_));
+      reinterpret_cast<char*>(&stroke_width_) -
+      reinterpret_cast<char*>(&filled_)) + sizeof(stroke_width_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2805,6 +2810,14 @@ const char* RectangleNode::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
           rounded_radius_y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float stroke_width = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
+          stroke_width_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
@@ -2880,6 +2893,16 @@ uint8_t* RectangleNode::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(5, this->_internal_rounded_radius_y(), target);
   }
 
+  // float stroke_width = 6;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_stroke_width = this->_internal_stroke_width();
+  uint32_t raw_stroke_width;
+  memcpy(&raw_stroke_width, &tmp_stroke_width, sizeof(tmp_stroke_width));
+  if (raw_stroke_width != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(6, this->_internal_stroke_width(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2933,6 +2956,15 @@ size_t RectangleNode::ByteSizeLong() const {
     total_size += 1 + 4;
   }
 
+  // float stroke_width = 6;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_stroke_width = this->_internal_stroke_width();
+  uint32_t raw_stroke_width;
+  memcpy(&raw_stroke_width, &tmp_stroke_width, sizeof(tmp_stroke_width));
+  if (raw_stroke_width != 0) {
+    total_size += 1 + 4;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
@@ -2978,6 +3010,13 @@ void RectangleNode::MergeFrom(const RectangleNode& from) {
   if (raw_rounded_radius_y != 0) {
     _internal_set_rounded_radius_y(from._internal_rounded_radius_y());
   }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_stroke_width = from._internal_stroke_width();
+  uint32_t raw_stroke_width;
+  memcpy(&raw_stroke_width, &tmp_stroke_width, sizeof(tmp_stroke_width));
+  if (raw_stroke_width != 0) {
+    _internal_set_stroke_width(from._internal_stroke_width());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2996,8 +3035,8 @@ void RectangleNode::InternalSwap(RectangleNode* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RectangleNode, rounded_radius_y_)
-      + sizeof(RectangleNode::rounded_radius_y_)
+      PROTOBUF_FIELD_OFFSET(RectangleNode, stroke_width_)
+      + sizeof(RectangleNode::stroke_width_)
       - PROTOBUF_FIELD_OFFSET(RectangleNode, rect_)>(
           reinterpret_cast<char*>(&rect_),
           reinterpret_cast<char*>(&other->rect_));
@@ -6105,15 +6144,17 @@ PathNode::PathNode(const PathNode& from)
   } else {
     stroke_ = nullptr;
   }
-  is_filled_ = from.is_filled_;
+  ::memcpy(&is_filled_, &from.is_filled_,
+    static_cast<size_t>(reinterpret_cast<char*>(&stroke_width_) -
+    reinterpret_cast<char*>(&is_filled_)) + sizeof(stroke_width_));
   // @@protoc_insertion_point(copy_constructor:uif.PathNode)
 }
 
 inline void PathNode::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&stroke_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&is_filled_) -
-    reinterpret_cast<char*>(&stroke_)) + sizeof(is_filled_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&stroke_width_) -
+    reinterpret_cast<char*>(&stroke_)) + sizeof(stroke_width_));
 }
 
 PathNode::~PathNode() {
@@ -6149,7 +6190,9 @@ void PathNode::Clear() {
     delete stroke_;
   }
   stroke_ = nullptr;
-  is_filled_ = false;
+  ::memset(&is_filled_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&stroke_width_) -
+      reinterpret_cast<char*>(&is_filled_)) + sizeof(stroke_width_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6185,6 +6228,14 @@ const char* PathNode::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_stroke(), ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // float stroke_width = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          stroke_width_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else
           goto handle_unusual;
         continue;
@@ -6239,6 +6290,16 @@ uint8_t* PathNode::_InternalSerialize(
         3, _Internal::stroke(this), target, stream);
   }
 
+  // float stroke_width = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_stroke_width = this->_internal_stroke_width();
+  uint32_t raw_stroke_width;
+  memcpy(&raw_stroke_width, &tmp_stroke_width, sizeof(tmp_stroke_width));
+  if (raw_stroke_width != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(4, this->_internal_stroke_width(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -6274,6 +6335,15 @@ size_t PathNode::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
+  // float stroke_width = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_stroke_width = this->_internal_stroke_width();
+  uint32_t raw_stroke_width;
+  memcpy(&raw_stroke_width, &tmp_stroke_width, sizeof(tmp_stroke_width));
+  if (raw_stroke_width != 0) {
+    total_size += 1 + 4;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
@@ -6303,6 +6373,13 @@ void PathNode::MergeFrom(const PathNode& from) {
   if (from._internal_is_filled() != 0) {
     _internal_set_is_filled(from._internal_is_filled());
   }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_stroke_width = from._internal_stroke_width();
+  uint32_t raw_stroke_width;
+  memcpy(&raw_stroke_width, &tmp_stroke_width, sizeof(tmp_stroke_width));
+  if (raw_stroke_width != 0) {
+    _internal_set_stroke_width(from._internal_stroke_width());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -6322,8 +6399,8 @@ void PathNode::InternalSwap(PathNode* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   commands_.InternalSwap(&other->commands_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PathNode, is_filled_)
-      + sizeof(PathNode::is_filled_)
+      PROTOBUF_FIELD_OFFSET(PathNode, stroke_width_)
+      + sizeof(PathNode::stroke_width_)
       - PROTOBUF_FIELD_OFFSET(PathNode, stroke_)>(
           reinterpret_cast<char*>(&stroke_),
           reinterpret_cast<char*>(&other->stroke_));

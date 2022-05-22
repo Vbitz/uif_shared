@@ -1651,6 +1651,7 @@ class RectangleNode final :
     kFilledFieldNumber = 3,
     kRoundedRadiusXFieldNumber = 4,
     kRoundedRadiusYFieldNumber = 5,
+    kStrokeWidthFieldNumber = 6,
   };
   // .uif.Rectangle rect = 1;
   bool has_rect() const;
@@ -1715,6 +1716,15 @@ class RectangleNode final :
   void _internal_set_rounded_radius_y(float value);
   public:
 
+  // float stroke_width = 6;
+  void clear_stroke_width();
+  float stroke_width() const;
+  void set_stroke_width(float value);
+  private:
+  float _internal_stroke_width() const;
+  void _internal_set_stroke_width(float value);
+  public:
+
   // @@protoc_insertion_point(class_scope:uif.RectangleNode)
  private:
   class _Internal;
@@ -1727,6 +1737,7 @@ class RectangleNode final :
   bool filled_;
   float rounded_radius_x_;
   float rounded_radius_y_;
+  float stroke_width_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_uif_2eproto;
 };
@@ -3780,6 +3791,7 @@ class PathNode final :
     kCommandsFieldNumber = 1,
     kStrokeFieldNumber = 3,
     kIsFilledFieldNumber = 2,
+    kStrokeWidthFieldNumber = 4,
   };
   // repeated .uif.PathCommand commands = 1;
   int commands_size() const;
@@ -3826,6 +3838,15 @@ class PathNode final :
   void _internal_set_is_filled(bool value);
   public:
 
+  // float stroke_width = 4;
+  void clear_stroke_width();
+  float stroke_width() const;
+  void set_stroke_width(float value);
+  private:
+  float _internal_stroke_width() const;
+  void _internal_set_stroke_width(float value);
+  public:
+
   // @@protoc_insertion_point(class_scope:uif.PathNode)
  private:
   class _Internal;
@@ -3836,6 +3857,7 @@ class PathNode final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::uif::PathCommand > commands_;
   ::uif::Brush* stroke_;
   bool is_filled_;
+  float stroke_width_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_uif_2eproto;
 };
@@ -7127,6 +7149,26 @@ inline void RectangleNode::set_filled(bool value) {
   // @@protoc_insertion_point(field_set:uif.RectangleNode.filled)
 }
 
+// float stroke_width = 6;
+inline void RectangleNode::clear_stroke_width() {
+  stroke_width_ = 0;
+}
+inline float RectangleNode::_internal_stroke_width() const {
+  return stroke_width_;
+}
+inline float RectangleNode::stroke_width() const {
+  // @@protoc_insertion_point(field_get:uif.RectangleNode.stroke_width)
+  return _internal_stroke_width();
+}
+inline void RectangleNode::_internal_set_stroke_width(float value) {
+  
+  stroke_width_ = value;
+}
+inline void RectangleNode::set_stroke_width(float value) {
+  _internal_set_stroke_width(value);
+  // @@protoc_insertion_point(field_set:uif.RectangleNode.stroke_width)
+}
+
 // float rounded_radius_x = 4;
 inline void RectangleNode::clear_rounded_radius_x() {
   rounded_radius_x_ = 0;
@@ -9505,6 +9547,26 @@ inline void PathNode::set_allocated_stroke(::uif::Brush* stroke) {
   }
   stroke_ = stroke;
   // @@protoc_insertion_point(field_set_allocated:uif.PathNode.stroke)
+}
+
+// float stroke_width = 4;
+inline void PathNode::clear_stroke_width() {
+  stroke_width_ = 0;
+}
+inline float PathNode::_internal_stroke_width() const {
+  return stroke_width_;
+}
+inline float PathNode::stroke_width() const {
+  // @@protoc_insertion_point(field_get:uif.PathNode.stroke_width)
+  return _internal_stroke_width();
+}
+inline void PathNode::_internal_set_stroke_width(float value) {
+  
+  stroke_width_ = value;
+}
+inline void PathNode::set_stroke_width(float value) {
+  _internal_set_stroke_width(value);
+  // @@protoc_insertion_point(field_set:uif.PathNode.stroke_width)
 }
 
 // -------------------------------------------------------------------
