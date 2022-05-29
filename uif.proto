@@ -210,7 +210,7 @@ message TransformRotate {
 }
 
 message TransformScale {
-    float size = 1;
+    Point size = 1;
     Point center = 2;
 }
 
