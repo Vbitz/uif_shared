@@ -48,7 +48,7 @@ struct TableStruct_uif_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[32]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[37]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -152,6 +152,21 @@ extern TextHitEventDefaultTypeInternal _TextHitEvent_default_instance_;
 class TextNode;
 struct TextNodeDefaultTypeInternal;
 extern TextNodeDefaultTypeInternal _TextNode_default_instance_;
+class Transform;
+struct TransformDefaultTypeInternal;
+extern TransformDefaultTypeInternal _Transform_default_instance_;
+class TransformNode;
+struct TransformNodeDefaultTypeInternal;
+extern TransformNodeDefaultTypeInternal _TransformNode_default_instance_;
+class TransformRotate;
+struct TransformRotateDefaultTypeInternal;
+extern TransformRotateDefaultTypeInternal _TransformRotate_default_instance_;
+class TransformScale;
+struct TransformScaleDefaultTypeInternal;
+extern TransformScaleDefaultTypeInternal _TransformScale_default_instance_;
+class TransformTranslate;
+struct TransformTranslateDefaultTypeInternal;
+extern TransformTranslateDefaultTypeInternal _TransformTranslate_default_instance_;
 }  // namespace uif
 PROTOBUF_NAMESPACE_OPEN
 template<> ::uif::Brush* Arena::CreateMaybeMessage<::uif::Brush>(Arena*);
@@ -186,6 +201,11 @@ template<> ::uif::SolidBrush* Arena::CreateMaybeMessage<::uif::SolidBrush>(Arena
 template<> ::uif::TextEditSpan* Arena::CreateMaybeMessage<::uif::TextEditSpan>(Arena*);
 template<> ::uif::TextHitEvent* Arena::CreateMaybeMessage<::uif::TextHitEvent>(Arena*);
 template<> ::uif::TextNode* Arena::CreateMaybeMessage<::uif::TextNode>(Arena*);
+template<> ::uif::Transform* Arena::CreateMaybeMessage<::uif::Transform>(Arena*);
+template<> ::uif::TransformNode* Arena::CreateMaybeMessage<::uif::TransformNode>(Arena*);
+template<> ::uif::TransformRotate* Arena::CreateMaybeMessage<::uif::TransformRotate>(Arena*);
+template<> ::uif::TransformScale* Arena::CreateMaybeMessage<::uif::TransformScale>(Arena*);
+template<> ::uif::TransformTranslate* Arena::CreateMaybeMessage<::uif::TransformTranslate>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace uif {
 
@@ -4136,6 +4156,864 @@ class ClipRectNode final :
 };
 // -------------------------------------------------------------------
 
+class TransformRotate final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:uif.TransformRotate) */ {
+ public:
+  inline TransformRotate() : TransformRotate(nullptr) {}
+  ~TransformRotate() override;
+  explicit constexpr TransformRotate(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TransformRotate(const TransformRotate& from);
+  TransformRotate(TransformRotate&& from) noexcept
+    : TransformRotate() {
+    *this = ::std::move(from);
+  }
+
+  inline TransformRotate& operator=(const TransformRotate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TransformRotate& operator=(TransformRotate&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TransformRotate& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TransformRotate* internal_default_instance() {
+    return reinterpret_cast<const TransformRotate*>(
+               &_TransformRotate_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(TransformRotate& a, TransformRotate& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TransformRotate* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TransformRotate* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TransformRotate* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TransformRotate>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TransformRotate& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TransformRotate& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TransformRotate* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "uif.TransformRotate";
+  }
+  protected:
+  explicit TransformRotate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCenterFieldNumber = 2,
+    kAngleFieldNumber = 1,
+  };
+  // .uif.Point center = 2;
+  bool has_center() const;
+  private:
+  bool _internal_has_center() const;
+  public:
+  void clear_center();
+  const ::uif::Point& center() const;
+  PROTOBUF_NODISCARD ::uif::Point* release_center();
+  ::uif::Point* mutable_center();
+  void set_allocated_center(::uif::Point* center);
+  private:
+  const ::uif::Point& _internal_center() const;
+  ::uif::Point* _internal_mutable_center();
+  public:
+  void unsafe_arena_set_allocated_center(
+      ::uif::Point* center);
+  ::uif::Point* unsafe_arena_release_center();
+
+  // float angle = 1;
+  void clear_angle();
+  float angle() const;
+  void set_angle(float value);
+  private:
+  float _internal_angle() const;
+  void _internal_set_angle(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:uif.TransformRotate)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::uif::Point* center_;
+  float angle_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_uif_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TransformScale final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:uif.TransformScale) */ {
+ public:
+  inline TransformScale() : TransformScale(nullptr) {}
+  ~TransformScale() override;
+  explicit constexpr TransformScale(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TransformScale(const TransformScale& from);
+  TransformScale(TransformScale&& from) noexcept
+    : TransformScale() {
+    *this = ::std::move(from);
+  }
+
+  inline TransformScale& operator=(const TransformScale& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TransformScale& operator=(TransformScale&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TransformScale& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TransformScale* internal_default_instance() {
+    return reinterpret_cast<const TransformScale*>(
+               &_TransformScale_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  friend void swap(TransformScale& a, TransformScale& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TransformScale* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TransformScale* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TransformScale* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TransformScale>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TransformScale& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TransformScale& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TransformScale* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "uif.TransformScale";
+  }
+  protected:
+  explicit TransformScale(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCenterFieldNumber = 2,
+    kSizeFieldNumber = 1,
+  };
+  // .uif.Point center = 2;
+  bool has_center() const;
+  private:
+  bool _internal_has_center() const;
+  public:
+  void clear_center();
+  const ::uif::Point& center() const;
+  PROTOBUF_NODISCARD ::uif::Point* release_center();
+  ::uif::Point* mutable_center();
+  void set_allocated_center(::uif::Point* center);
+  private:
+  const ::uif::Point& _internal_center() const;
+  ::uif::Point* _internal_mutable_center();
+  public:
+  void unsafe_arena_set_allocated_center(
+      ::uif::Point* center);
+  ::uif::Point* unsafe_arena_release_center();
+
+  // float size = 1;
+  void clear_size();
+  float size() const;
+  void set_size(float value);
+  private:
+  float _internal_size() const;
+  void _internal_set_size(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:uif.TransformScale)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::uif::Point* center_;
+  float size_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_uif_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TransformTranslate final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:uif.TransformTranslate) */ {
+ public:
+  inline TransformTranslate() : TransformTranslate(nullptr) {}
+  ~TransformTranslate() override;
+  explicit constexpr TransformTranslate(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TransformTranslate(const TransformTranslate& from);
+  TransformTranslate(TransformTranslate&& from) noexcept
+    : TransformTranslate() {
+    *this = ::std::move(from);
+  }
+
+  inline TransformTranslate& operator=(const TransformTranslate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TransformTranslate& operator=(TransformTranslate&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TransformTranslate& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TransformTranslate* internal_default_instance() {
+    return reinterpret_cast<const TransformTranslate*>(
+               &_TransformTranslate_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  friend void swap(TransformTranslate& a, TransformTranslate& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TransformTranslate* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TransformTranslate* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TransformTranslate* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TransformTranslate>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TransformTranslate& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TransformTranslate& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TransformTranslate* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "uif.TransformTranslate";
+  }
+  protected:
+  explicit TransformTranslate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTranslateFieldNumber = 1,
+  };
+  // .uif.Point translate = 1;
+  bool has_translate() const;
+  private:
+  bool _internal_has_translate() const;
+  public:
+  void clear_translate();
+  const ::uif::Point& translate() const;
+  PROTOBUF_NODISCARD ::uif::Point* release_translate();
+  ::uif::Point* mutable_translate();
+  void set_allocated_translate(::uif::Point* translate);
+  private:
+  const ::uif::Point& _internal_translate() const;
+  ::uif::Point* _internal_mutable_translate();
+  public:
+  void unsafe_arena_set_allocated_translate(
+      ::uif::Point* translate);
+  ::uif::Point* unsafe_arena_release_translate();
+
+  // @@protoc_insertion_point(class_scope:uif.TransformTranslate)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::uif::Point* translate_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_uif_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Transform final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:uif.Transform) */ {
+ public:
+  inline Transform() : Transform(nullptr) {}
+  ~Transform() override;
+  explicit constexpr Transform(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Transform(const Transform& from);
+  Transform(Transform&& from) noexcept
+    : Transform() {
+    *this = ::std::move(from);
+  }
+
+  inline Transform& operator=(const Transform& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Transform& operator=(Transform&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Transform& default_instance() {
+    return *internal_default_instance();
+  }
+  enum TransformCase {
+    kRotate = 1,
+    kScale = 2,
+    kTranslate = 3,
+    TRANSFORM_NOT_SET = 0,
+  };
+
+  static inline const Transform* internal_default_instance() {
+    return reinterpret_cast<const Transform*>(
+               &_Transform_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(Transform& a, Transform& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Transform* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Transform* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Transform* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Transform>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Transform& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const Transform& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Transform* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "uif.Transform";
+  }
+  protected:
+  explicit Transform(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRotateFieldNumber = 1,
+    kScaleFieldNumber = 2,
+    kTranslateFieldNumber = 3,
+  };
+  // .uif.TransformRotate rotate = 1;
+  bool has_rotate() const;
+  private:
+  bool _internal_has_rotate() const;
+  public:
+  void clear_rotate();
+  const ::uif::TransformRotate& rotate() const;
+  PROTOBUF_NODISCARD ::uif::TransformRotate* release_rotate();
+  ::uif::TransformRotate* mutable_rotate();
+  void set_allocated_rotate(::uif::TransformRotate* rotate);
+  private:
+  const ::uif::TransformRotate& _internal_rotate() const;
+  ::uif::TransformRotate* _internal_mutable_rotate();
+  public:
+  void unsafe_arena_set_allocated_rotate(
+      ::uif::TransformRotate* rotate);
+  ::uif::TransformRotate* unsafe_arena_release_rotate();
+
+  // .uif.TransformScale scale = 2;
+  bool has_scale() const;
+  private:
+  bool _internal_has_scale() const;
+  public:
+  void clear_scale();
+  const ::uif::TransformScale& scale() const;
+  PROTOBUF_NODISCARD ::uif::TransformScale* release_scale();
+  ::uif::TransformScale* mutable_scale();
+  void set_allocated_scale(::uif::TransformScale* scale);
+  private:
+  const ::uif::TransformScale& _internal_scale() const;
+  ::uif::TransformScale* _internal_mutable_scale();
+  public:
+  void unsafe_arena_set_allocated_scale(
+      ::uif::TransformScale* scale);
+  ::uif::TransformScale* unsafe_arena_release_scale();
+
+  // .uif.TransformTranslate translate = 3;
+  bool has_translate() const;
+  private:
+  bool _internal_has_translate() const;
+  public:
+  void clear_translate();
+  const ::uif::TransformTranslate& translate() const;
+  PROTOBUF_NODISCARD ::uif::TransformTranslate* release_translate();
+  ::uif::TransformTranslate* mutable_translate();
+  void set_allocated_translate(::uif::TransformTranslate* translate);
+  private:
+  const ::uif::TransformTranslate& _internal_translate() const;
+  ::uif::TransformTranslate* _internal_mutable_translate();
+  public:
+  void unsafe_arena_set_allocated_translate(
+      ::uif::TransformTranslate* translate);
+  ::uif::TransformTranslate* unsafe_arena_release_translate();
+
+  void clear_transform();
+  TransformCase transform_case() const;
+  // @@protoc_insertion_point(class_scope:uif.Transform)
+ private:
+  class _Internal;
+  void set_has_rotate();
+  void set_has_scale();
+  void set_has_translate();
+
+  inline bool has_transform() const;
+  inline void clear_has_transform();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  union TransformUnion {
+    constexpr TransformUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::uif::TransformRotate* rotate_;
+    ::uif::TransformScale* scale_;
+    ::uif::TransformTranslate* translate_;
+  } transform_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_uif_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TransformNode final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:uif.TransformNode) */ {
+ public:
+  inline TransformNode() : TransformNode(nullptr) {}
+  ~TransformNode() override;
+  explicit constexpr TransformNode(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TransformNode(const TransformNode& from);
+  TransformNode(TransformNode&& from) noexcept
+    : TransformNode() {
+    *this = ::std::move(from);
+  }
+
+  inline TransformNode& operator=(const TransformNode& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TransformNode& operator=(TransformNode&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TransformNode& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TransformNode* internal_default_instance() {
+    return reinterpret_cast<const TransformNode*>(
+               &_TransformNode_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  friend void swap(TransformNode& a, TransformNode& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TransformNode* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TransformNode* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TransformNode* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TransformNode>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TransformNode& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TransformNode& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TransformNode* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "uif.TransformNode";
+  }
+  protected:
+  explicit TransformNode(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTransformFieldNumber = 1,
+  };
+  // repeated .uif.Transform transform = 1;
+  int transform_size() const;
+  private:
+  int _internal_transform_size() const;
+  public:
+  void clear_transform();
+  ::uif::Transform* mutable_transform(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::uif::Transform >*
+      mutable_transform();
+  private:
+  const ::uif::Transform& _internal_transform(int index) const;
+  ::uif::Transform* _internal_add_transform();
+  public:
+  const ::uif::Transform& transform(int index) const;
+  ::uif::Transform* add_transform();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::uif::Transform >&
+      transform() const;
+
+  // @@protoc_insertion_point(class_scope:uif.TransformNode)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::uif::Transform > transform_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_uif_2eproto;
+};
+// -------------------------------------------------------------------
+
 class EditCommand final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:uif.EditCommand) */ {
  public:
@@ -4185,6 +5063,7 @@ class EditCommand final :
     kPath = 12,
     kEmpty = 20,
     kClip = 21,
+    kTransform = 22,
     NODE_NOT_SET = 0,
   };
 
@@ -4193,7 +5072,7 @@ class EditCommand final :
                &_EditCommand_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    24;
 
   friend void swap(EditCommand& a, EditCommand& b) {
     a.Swap(&b);
@@ -4311,6 +5190,7 @@ class EditCommand final :
     kPathFieldNumber = 12,
     kEmptyFieldNumber = 20,
     kClipFieldNumber = 21,
+    kTransformFieldNumber = 22,
   };
   // string client_id = 4;
   void clear_client_id();
@@ -4452,6 +5332,24 @@ class EditCommand final :
       ::uif::ClipRectNode* clip);
   ::uif::ClipRectNode* unsafe_arena_release_clip();
 
+  // .uif.TransformNode transform = 22;
+  bool has_transform() const;
+  private:
+  bool _internal_has_transform() const;
+  public:
+  void clear_transform();
+  const ::uif::TransformNode& transform() const;
+  PROTOBUF_NODISCARD ::uif::TransformNode* release_transform();
+  ::uif::TransformNode* mutable_transform();
+  void set_allocated_transform(::uif::TransformNode* transform);
+  private:
+  const ::uif::TransformNode& _internal_transform() const;
+  ::uif::TransformNode* _internal_mutable_transform();
+  public:
+  void unsafe_arena_set_allocated_transform(
+      ::uif::TransformNode* transform);
+  ::uif::TransformNode* unsafe_arena_release_transform();
+
   void clear_node();
   NodeCase node_case() const;
   // @@protoc_insertion_point(class_scope:uif.EditCommand)
@@ -4462,6 +5360,7 @@ class EditCommand final :
   void set_has_path();
   void set_has_empty();
   void set_has_clip();
+  void set_has_transform();
 
   inline bool has_node() const;
   inline void clear_has_node();
@@ -4482,6 +5381,7 @@ class EditCommand final :
     ::uif::PathNode* path_;
     ::uif::EmptyNode* empty_;
     ::uif::ClipRectNode* clip_;
+    ::uif::TransformNode* transform_;
   } node_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -4538,7 +5438,7 @@ class EditReq final :
                &_EditReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    25;
 
   friend void swap(EditReq& a, EditReq& b) {
     a.Swap(&b);
@@ -4692,7 +5592,7 @@ class EditResp final :
                &_EditResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    26;
 
   friend void swap(EditResp& a, EditResp& b) {
     a.Swap(&b);
@@ -4811,7 +5711,7 @@ class GetEventsReq final :
                &_GetEventsReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    27;
 
   friend void swap(GetEventsReq& a, GetEventsReq& b) {
     a.Swap(&b);
@@ -4962,7 +5862,7 @@ class CloseEvent final :
                &_CloseEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    28;
 
   friend void swap(CloseEvent& a, CloseEvent& b) {
     a.Swap(&b);
@@ -5108,7 +6008,7 @@ class MouseEvent final :
                &_MouseEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    29;
 
   friend void swap(MouseEvent& a, MouseEvent& b) {
     a.Swap(&b);
@@ -5285,7 +6185,7 @@ class KeyboardEvent final :
                &_KeyboardEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    30;
 
   friend void swap(KeyboardEvent& a, KeyboardEvent& b) {
     a.Swap(&b);
@@ -5442,7 +6342,7 @@ class TextHitEvent final :
                &_TextHitEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    31;
 
   friend void swap(TextHitEvent& a, TextHitEvent& b) {
     a.Swap(&b);
@@ -5638,7 +6538,7 @@ class Event final :
                &_Event_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    32;
 
   friend void swap(Event& a, Event& b) {
     a.Swap(&b);
@@ -5867,7 +6767,7 @@ class GetServerPropertiesReq final :
                &_GetServerPropertiesReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    33;
 
   friend void swap(GetServerPropertiesReq& a, GetServerPropertiesReq& b) {
     a.Swap(&b);
@@ -5986,7 +6886,7 @@ class GetServerPropertiesResp final :
                &_GetServerPropertiesResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    34;
 
   friend void swap(GetServerPropertiesResp& a, GetServerPropertiesResp& b) {
     a.Swap(&b);
@@ -6143,7 +7043,7 @@ class SetClearColorReq final :
                &_SetClearColorReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    35;
 
   friend void swap(SetClearColorReq& a, SetClearColorReq& b) {
     a.Swap(&b);
@@ -6288,7 +7188,7 @@ class SetClearColorResp final :
                &_SetClearColorResp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    36;
 
   friend void swap(SetClearColorResp& a, SetClearColorResp& b) {
     a.Swap(&b);
@@ -9669,6 +10569,607 @@ inline void ClipRectNode::set_allocated_rect(::uif::Rectangle* rect) {
 
 // -------------------------------------------------------------------
 
+// TransformRotate
+
+// float angle = 1;
+inline void TransformRotate::clear_angle() {
+  angle_ = 0;
+}
+inline float TransformRotate::_internal_angle() const {
+  return angle_;
+}
+inline float TransformRotate::angle() const {
+  // @@protoc_insertion_point(field_get:uif.TransformRotate.angle)
+  return _internal_angle();
+}
+inline void TransformRotate::_internal_set_angle(float value) {
+  
+  angle_ = value;
+}
+inline void TransformRotate::set_angle(float value) {
+  _internal_set_angle(value);
+  // @@protoc_insertion_point(field_set:uif.TransformRotate.angle)
+}
+
+// .uif.Point center = 2;
+inline bool TransformRotate::_internal_has_center() const {
+  return this != internal_default_instance() && center_ != nullptr;
+}
+inline bool TransformRotate::has_center() const {
+  return _internal_has_center();
+}
+inline void TransformRotate::clear_center() {
+  if (GetArenaForAllocation() == nullptr && center_ != nullptr) {
+    delete center_;
+  }
+  center_ = nullptr;
+}
+inline const ::uif::Point& TransformRotate::_internal_center() const {
+  const ::uif::Point* p = center_;
+  return p != nullptr ? *p : reinterpret_cast<const ::uif::Point&>(
+      ::uif::_Point_default_instance_);
+}
+inline const ::uif::Point& TransformRotate::center() const {
+  // @@protoc_insertion_point(field_get:uif.TransformRotate.center)
+  return _internal_center();
+}
+inline void TransformRotate::unsafe_arena_set_allocated_center(
+    ::uif::Point* center) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(center_);
+  }
+  center_ = center;
+  if (center) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:uif.TransformRotate.center)
+}
+inline ::uif::Point* TransformRotate::release_center() {
+  
+  ::uif::Point* temp = center_;
+  center_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::uif::Point* TransformRotate::unsafe_arena_release_center() {
+  // @@protoc_insertion_point(field_release:uif.TransformRotate.center)
+  
+  ::uif::Point* temp = center_;
+  center_ = nullptr;
+  return temp;
+}
+inline ::uif::Point* TransformRotate::_internal_mutable_center() {
+  
+  if (center_ == nullptr) {
+    auto* p = CreateMaybeMessage<::uif::Point>(GetArenaForAllocation());
+    center_ = p;
+  }
+  return center_;
+}
+inline ::uif::Point* TransformRotate::mutable_center() {
+  ::uif::Point* _msg = _internal_mutable_center();
+  // @@protoc_insertion_point(field_mutable:uif.TransformRotate.center)
+  return _msg;
+}
+inline void TransformRotate::set_allocated_center(::uif::Point* center) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete center_;
+  }
+  if (center) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::uif::Point>::GetOwningArena(center);
+    if (message_arena != submessage_arena) {
+      center = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, center, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  center_ = center;
+  // @@protoc_insertion_point(field_set_allocated:uif.TransformRotate.center)
+}
+
+// -------------------------------------------------------------------
+
+// TransformScale
+
+// float size = 1;
+inline void TransformScale::clear_size() {
+  size_ = 0;
+}
+inline float TransformScale::_internal_size() const {
+  return size_;
+}
+inline float TransformScale::size() const {
+  // @@protoc_insertion_point(field_get:uif.TransformScale.size)
+  return _internal_size();
+}
+inline void TransformScale::_internal_set_size(float value) {
+  
+  size_ = value;
+}
+inline void TransformScale::set_size(float value) {
+  _internal_set_size(value);
+  // @@protoc_insertion_point(field_set:uif.TransformScale.size)
+}
+
+// .uif.Point center = 2;
+inline bool TransformScale::_internal_has_center() const {
+  return this != internal_default_instance() && center_ != nullptr;
+}
+inline bool TransformScale::has_center() const {
+  return _internal_has_center();
+}
+inline void TransformScale::clear_center() {
+  if (GetArenaForAllocation() == nullptr && center_ != nullptr) {
+    delete center_;
+  }
+  center_ = nullptr;
+}
+inline const ::uif::Point& TransformScale::_internal_center() const {
+  const ::uif::Point* p = center_;
+  return p != nullptr ? *p : reinterpret_cast<const ::uif::Point&>(
+      ::uif::_Point_default_instance_);
+}
+inline const ::uif::Point& TransformScale::center() const {
+  // @@protoc_insertion_point(field_get:uif.TransformScale.center)
+  return _internal_center();
+}
+inline void TransformScale::unsafe_arena_set_allocated_center(
+    ::uif::Point* center) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(center_);
+  }
+  center_ = center;
+  if (center) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:uif.TransformScale.center)
+}
+inline ::uif::Point* TransformScale::release_center() {
+  
+  ::uif::Point* temp = center_;
+  center_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::uif::Point* TransformScale::unsafe_arena_release_center() {
+  // @@protoc_insertion_point(field_release:uif.TransformScale.center)
+  
+  ::uif::Point* temp = center_;
+  center_ = nullptr;
+  return temp;
+}
+inline ::uif::Point* TransformScale::_internal_mutable_center() {
+  
+  if (center_ == nullptr) {
+    auto* p = CreateMaybeMessage<::uif::Point>(GetArenaForAllocation());
+    center_ = p;
+  }
+  return center_;
+}
+inline ::uif::Point* TransformScale::mutable_center() {
+  ::uif::Point* _msg = _internal_mutable_center();
+  // @@protoc_insertion_point(field_mutable:uif.TransformScale.center)
+  return _msg;
+}
+inline void TransformScale::set_allocated_center(::uif::Point* center) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete center_;
+  }
+  if (center) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::uif::Point>::GetOwningArena(center);
+    if (message_arena != submessage_arena) {
+      center = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, center, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  center_ = center;
+  // @@protoc_insertion_point(field_set_allocated:uif.TransformScale.center)
+}
+
+// -------------------------------------------------------------------
+
+// TransformTranslate
+
+// .uif.Point translate = 1;
+inline bool TransformTranslate::_internal_has_translate() const {
+  return this != internal_default_instance() && translate_ != nullptr;
+}
+inline bool TransformTranslate::has_translate() const {
+  return _internal_has_translate();
+}
+inline void TransformTranslate::clear_translate() {
+  if (GetArenaForAllocation() == nullptr && translate_ != nullptr) {
+    delete translate_;
+  }
+  translate_ = nullptr;
+}
+inline const ::uif::Point& TransformTranslate::_internal_translate() const {
+  const ::uif::Point* p = translate_;
+  return p != nullptr ? *p : reinterpret_cast<const ::uif::Point&>(
+      ::uif::_Point_default_instance_);
+}
+inline const ::uif::Point& TransformTranslate::translate() const {
+  // @@protoc_insertion_point(field_get:uif.TransformTranslate.translate)
+  return _internal_translate();
+}
+inline void TransformTranslate::unsafe_arena_set_allocated_translate(
+    ::uif::Point* translate) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(translate_);
+  }
+  translate_ = translate;
+  if (translate) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:uif.TransformTranslate.translate)
+}
+inline ::uif::Point* TransformTranslate::release_translate() {
+  
+  ::uif::Point* temp = translate_;
+  translate_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::uif::Point* TransformTranslate::unsafe_arena_release_translate() {
+  // @@protoc_insertion_point(field_release:uif.TransformTranslate.translate)
+  
+  ::uif::Point* temp = translate_;
+  translate_ = nullptr;
+  return temp;
+}
+inline ::uif::Point* TransformTranslate::_internal_mutable_translate() {
+  
+  if (translate_ == nullptr) {
+    auto* p = CreateMaybeMessage<::uif::Point>(GetArenaForAllocation());
+    translate_ = p;
+  }
+  return translate_;
+}
+inline ::uif::Point* TransformTranslate::mutable_translate() {
+  ::uif::Point* _msg = _internal_mutable_translate();
+  // @@protoc_insertion_point(field_mutable:uif.TransformTranslate.translate)
+  return _msg;
+}
+inline void TransformTranslate::set_allocated_translate(::uif::Point* translate) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete translate_;
+  }
+  if (translate) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::uif::Point>::GetOwningArena(translate);
+    if (message_arena != submessage_arena) {
+      translate = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, translate, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  translate_ = translate;
+  // @@protoc_insertion_point(field_set_allocated:uif.TransformTranslate.translate)
+}
+
+// -------------------------------------------------------------------
+
+// Transform
+
+// .uif.TransformRotate rotate = 1;
+inline bool Transform::_internal_has_rotate() const {
+  return transform_case() == kRotate;
+}
+inline bool Transform::has_rotate() const {
+  return _internal_has_rotate();
+}
+inline void Transform::set_has_rotate() {
+  _oneof_case_[0] = kRotate;
+}
+inline void Transform::clear_rotate() {
+  if (_internal_has_rotate()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete transform_.rotate_;
+    }
+    clear_has_transform();
+  }
+}
+inline ::uif::TransformRotate* Transform::release_rotate() {
+  // @@protoc_insertion_point(field_release:uif.Transform.rotate)
+  if (_internal_has_rotate()) {
+    clear_has_transform();
+      ::uif::TransformRotate* temp = transform_.rotate_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    transform_.rotate_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::uif::TransformRotate& Transform::_internal_rotate() const {
+  return _internal_has_rotate()
+      ? *transform_.rotate_
+      : reinterpret_cast< ::uif::TransformRotate&>(::uif::_TransformRotate_default_instance_);
+}
+inline const ::uif::TransformRotate& Transform::rotate() const {
+  // @@protoc_insertion_point(field_get:uif.Transform.rotate)
+  return _internal_rotate();
+}
+inline ::uif::TransformRotate* Transform::unsafe_arena_release_rotate() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:uif.Transform.rotate)
+  if (_internal_has_rotate()) {
+    clear_has_transform();
+    ::uif::TransformRotate* temp = transform_.rotate_;
+    transform_.rotate_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Transform::unsafe_arena_set_allocated_rotate(::uif::TransformRotate* rotate) {
+  clear_transform();
+  if (rotate) {
+    set_has_rotate();
+    transform_.rotate_ = rotate;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:uif.Transform.rotate)
+}
+inline ::uif::TransformRotate* Transform::_internal_mutable_rotate() {
+  if (!_internal_has_rotate()) {
+    clear_transform();
+    set_has_rotate();
+    transform_.rotate_ = CreateMaybeMessage< ::uif::TransformRotate >(GetArenaForAllocation());
+  }
+  return transform_.rotate_;
+}
+inline ::uif::TransformRotate* Transform::mutable_rotate() {
+  ::uif::TransformRotate* _msg = _internal_mutable_rotate();
+  // @@protoc_insertion_point(field_mutable:uif.Transform.rotate)
+  return _msg;
+}
+
+// .uif.TransformScale scale = 2;
+inline bool Transform::_internal_has_scale() const {
+  return transform_case() == kScale;
+}
+inline bool Transform::has_scale() const {
+  return _internal_has_scale();
+}
+inline void Transform::set_has_scale() {
+  _oneof_case_[0] = kScale;
+}
+inline void Transform::clear_scale() {
+  if (_internal_has_scale()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete transform_.scale_;
+    }
+    clear_has_transform();
+  }
+}
+inline ::uif::TransformScale* Transform::release_scale() {
+  // @@protoc_insertion_point(field_release:uif.Transform.scale)
+  if (_internal_has_scale()) {
+    clear_has_transform();
+      ::uif::TransformScale* temp = transform_.scale_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    transform_.scale_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::uif::TransformScale& Transform::_internal_scale() const {
+  return _internal_has_scale()
+      ? *transform_.scale_
+      : reinterpret_cast< ::uif::TransformScale&>(::uif::_TransformScale_default_instance_);
+}
+inline const ::uif::TransformScale& Transform::scale() const {
+  // @@protoc_insertion_point(field_get:uif.Transform.scale)
+  return _internal_scale();
+}
+inline ::uif::TransformScale* Transform::unsafe_arena_release_scale() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:uif.Transform.scale)
+  if (_internal_has_scale()) {
+    clear_has_transform();
+    ::uif::TransformScale* temp = transform_.scale_;
+    transform_.scale_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Transform::unsafe_arena_set_allocated_scale(::uif::TransformScale* scale) {
+  clear_transform();
+  if (scale) {
+    set_has_scale();
+    transform_.scale_ = scale;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:uif.Transform.scale)
+}
+inline ::uif::TransformScale* Transform::_internal_mutable_scale() {
+  if (!_internal_has_scale()) {
+    clear_transform();
+    set_has_scale();
+    transform_.scale_ = CreateMaybeMessage< ::uif::TransformScale >(GetArenaForAllocation());
+  }
+  return transform_.scale_;
+}
+inline ::uif::TransformScale* Transform::mutable_scale() {
+  ::uif::TransformScale* _msg = _internal_mutable_scale();
+  // @@protoc_insertion_point(field_mutable:uif.Transform.scale)
+  return _msg;
+}
+
+// .uif.TransformTranslate translate = 3;
+inline bool Transform::_internal_has_translate() const {
+  return transform_case() == kTranslate;
+}
+inline bool Transform::has_translate() const {
+  return _internal_has_translate();
+}
+inline void Transform::set_has_translate() {
+  _oneof_case_[0] = kTranslate;
+}
+inline void Transform::clear_translate() {
+  if (_internal_has_translate()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete transform_.translate_;
+    }
+    clear_has_transform();
+  }
+}
+inline ::uif::TransformTranslate* Transform::release_translate() {
+  // @@protoc_insertion_point(field_release:uif.Transform.translate)
+  if (_internal_has_translate()) {
+    clear_has_transform();
+      ::uif::TransformTranslate* temp = transform_.translate_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    transform_.translate_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::uif::TransformTranslate& Transform::_internal_translate() const {
+  return _internal_has_translate()
+      ? *transform_.translate_
+      : reinterpret_cast< ::uif::TransformTranslate&>(::uif::_TransformTranslate_default_instance_);
+}
+inline const ::uif::TransformTranslate& Transform::translate() const {
+  // @@protoc_insertion_point(field_get:uif.Transform.translate)
+  return _internal_translate();
+}
+inline ::uif::TransformTranslate* Transform::unsafe_arena_release_translate() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:uif.Transform.translate)
+  if (_internal_has_translate()) {
+    clear_has_transform();
+    ::uif::TransformTranslate* temp = transform_.translate_;
+    transform_.translate_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void Transform::unsafe_arena_set_allocated_translate(::uif::TransformTranslate* translate) {
+  clear_transform();
+  if (translate) {
+    set_has_translate();
+    transform_.translate_ = translate;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:uif.Transform.translate)
+}
+inline ::uif::TransformTranslate* Transform::_internal_mutable_translate() {
+  if (!_internal_has_translate()) {
+    clear_transform();
+    set_has_translate();
+    transform_.translate_ = CreateMaybeMessage< ::uif::TransformTranslate >(GetArenaForAllocation());
+  }
+  return transform_.translate_;
+}
+inline ::uif::TransformTranslate* Transform::mutable_translate() {
+  ::uif::TransformTranslate* _msg = _internal_mutable_translate();
+  // @@protoc_insertion_point(field_mutable:uif.Transform.translate)
+  return _msg;
+}
+
+inline bool Transform::has_transform() const {
+  return transform_case() != TRANSFORM_NOT_SET;
+}
+inline void Transform::clear_has_transform() {
+  _oneof_case_[0] = TRANSFORM_NOT_SET;
+}
+inline Transform::TransformCase Transform::transform_case() const {
+  return Transform::TransformCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// TransformNode
+
+// repeated .uif.Transform transform = 1;
+inline int TransformNode::_internal_transform_size() const {
+  return transform_.size();
+}
+inline int TransformNode::transform_size() const {
+  return _internal_transform_size();
+}
+inline void TransformNode::clear_transform() {
+  transform_.Clear();
+}
+inline ::uif::Transform* TransformNode::mutable_transform(int index) {
+  // @@protoc_insertion_point(field_mutable:uif.TransformNode.transform)
+  return transform_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::uif::Transform >*
+TransformNode::mutable_transform() {
+  // @@protoc_insertion_point(field_mutable_list:uif.TransformNode.transform)
+  return &transform_;
+}
+inline const ::uif::Transform& TransformNode::_internal_transform(int index) const {
+  return transform_.Get(index);
+}
+inline const ::uif::Transform& TransformNode::transform(int index) const {
+  // @@protoc_insertion_point(field_get:uif.TransformNode.transform)
+  return _internal_transform(index);
+}
+inline ::uif::Transform* TransformNode::_internal_add_transform() {
+  return transform_.Add();
+}
+inline ::uif::Transform* TransformNode::add_transform() {
+  ::uif::Transform* _add = _internal_add_transform();
+  // @@protoc_insertion_point(field_add:uif.TransformNode.transform)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::uif::Transform >&
+TransformNode::transform() const {
+  // @@protoc_insertion_point(field_list:uif.TransformNode.transform)
+  return transform_;
+}
+
+// -------------------------------------------------------------------
+
 // EditCommand
 
 // uint64 timestamp = 5;
@@ -10169,6 +11670,80 @@ inline ::uif::ClipRectNode* EditCommand::_internal_mutable_clip() {
 inline ::uif::ClipRectNode* EditCommand::mutable_clip() {
   ::uif::ClipRectNode* _msg = _internal_mutable_clip();
   // @@protoc_insertion_point(field_mutable:uif.EditCommand.clip)
+  return _msg;
+}
+
+// .uif.TransformNode transform = 22;
+inline bool EditCommand::_internal_has_transform() const {
+  return node_case() == kTransform;
+}
+inline bool EditCommand::has_transform() const {
+  return _internal_has_transform();
+}
+inline void EditCommand::set_has_transform() {
+  _oneof_case_[0] = kTransform;
+}
+inline void EditCommand::clear_transform() {
+  if (_internal_has_transform()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete node_.transform_;
+    }
+    clear_has_node();
+  }
+}
+inline ::uif::TransformNode* EditCommand::release_transform() {
+  // @@protoc_insertion_point(field_release:uif.EditCommand.transform)
+  if (_internal_has_transform()) {
+    clear_has_node();
+      ::uif::TransformNode* temp = node_.transform_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    node_.transform_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::uif::TransformNode& EditCommand::_internal_transform() const {
+  return _internal_has_transform()
+      ? *node_.transform_
+      : reinterpret_cast< ::uif::TransformNode&>(::uif::_TransformNode_default_instance_);
+}
+inline const ::uif::TransformNode& EditCommand::transform() const {
+  // @@protoc_insertion_point(field_get:uif.EditCommand.transform)
+  return _internal_transform();
+}
+inline ::uif::TransformNode* EditCommand::unsafe_arena_release_transform() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:uif.EditCommand.transform)
+  if (_internal_has_transform()) {
+    clear_has_node();
+    ::uif::TransformNode* temp = node_.transform_;
+    node_.transform_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void EditCommand::unsafe_arena_set_allocated_transform(::uif::TransformNode* transform) {
+  clear_node();
+  if (transform) {
+    set_has_transform();
+    node_.transform_ = transform;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:uif.EditCommand.transform)
+}
+inline ::uif::TransformNode* EditCommand::_internal_mutable_transform() {
+  if (!_internal_has_transform()) {
+    clear_node();
+    set_has_transform();
+    node_.transform_ = CreateMaybeMessage< ::uif::TransformNode >(GetArenaForAllocation());
+  }
+  return node_.transform_;
+}
+inline ::uif::TransformNode* EditCommand::mutable_transform() {
+  ::uif::TransformNode* _msg = _internal_mutable_transform();
+  // @@protoc_insertion_point(field_mutable:uif.EditCommand.transform)
   return _msg;
 }
 
@@ -11028,6 +12603,16 @@ inline void SetClearColorReq::set_color(uint32_t value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

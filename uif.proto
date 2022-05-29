@@ -204,6 +204,32 @@ message ClipRectNode {
     Rectangle rect = 1;
 }
 
+message TransformRotate {
+    float angle = 1;
+    Point center = 2;
+}
+
+message TransformScale {
+    float size = 1;
+    Point center = 2;
+}
+
+message TransformTranslate {
+    Point translate = 1;
+}
+
+message Transform {
+    oneof transform {
+        TransformRotate rotate = 1;
+        TransformScale scale = 2;
+        TransformTranslate translate = 3;
+    }
+}
+
+message TransformNode {
+    repeated Transform transform = 1;
+}
+
 message EditCommand {
     // A timestamp can optionally be specified to benchmark
     // the time it takes to apply a edit end to end.
@@ -234,6 +260,7 @@ message EditCommand {
         PathNode path = 12;
         EmptyNode empty = 20;
         ClipRectNode clip = 21;
+        TransformNode transform = 22;
     }
 }
 

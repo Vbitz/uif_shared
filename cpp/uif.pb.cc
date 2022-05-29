@@ -287,6 +287,68 @@ struct ClipRectNodeDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ClipRectNodeDefaultTypeInternal _ClipRectNode_default_instance_;
+constexpr TransformRotate::TransformRotate(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : center_(nullptr)
+  , angle_(0){}
+struct TransformRotateDefaultTypeInternal {
+  constexpr TransformRotateDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TransformRotateDefaultTypeInternal() {}
+  union {
+    TransformRotate _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransformRotateDefaultTypeInternal _TransformRotate_default_instance_;
+constexpr TransformScale::TransformScale(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : center_(nullptr)
+  , size_(0){}
+struct TransformScaleDefaultTypeInternal {
+  constexpr TransformScaleDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TransformScaleDefaultTypeInternal() {}
+  union {
+    TransformScale _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransformScaleDefaultTypeInternal _TransformScale_default_instance_;
+constexpr TransformTranslate::TransformTranslate(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : translate_(nullptr){}
+struct TransformTranslateDefaultTypeInternal {
+  constexpr TransformTranslateDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TransformTranslateDefaultTypeInternal() {}
+  union {
+    TransformTranslate _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransformTranslateDefaultTypeInternal _TransformTranslate_default_instance_;
+constexpr Transform::Transform(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct TransformDefaultTypeInternal {
+  constexpr TransformDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TransformDefaultTypeInternal() {}
+  union {
+    Transform _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransformDefaultTypeInternal _Transform_default_instance_;
+constexpr TransformNode::TransformNode(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : transform_(){}
+struct TransformNodeDefaultTypeInternal {
+  constexpr TransformNodeDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~TransformNodeDefaultTypeInternal() {}
+  union {
+    TransformNode _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransformNodeDefaultTypeInternal _TransformNode_default_instance_;
 constexpr EditCommand::EditCommand(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : client_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -457,7 +519,7 @@ struct SetClearColorRespDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SetClearColorRespDefaultTypeInternal _SetClearColorResp_default_instance_;
 }  // namespace uif
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_uif_2eproto[32];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_uif_2eproto[37];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_uif_2eproto[11];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_uif_2eproto = nullptr;
 
@@ -646,6 +708,46 @@ const uint32_t TableStruct_uif_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::uif::ClipRectNode, rect_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::uif::TransformRotate, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::uif::TransformRotate, angle_),
+  PROTOBUF_FIELD_OFFSET(::uif::TransformRotate, center_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::uif::TransformScale, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::uif::TransformScale, size_),
+  PROTOBUF_FIELD_OFFSET(::uif::TransformScale, center_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::uif::TransformTranslate, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::uif::TransformTranslate, translate_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::uif::Transform, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::uif::Transform, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::uif::Transform, transform_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::uif::TransformNode, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::uif::TransformNode, transform_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::uif::EditCommand, _internal_metadata_),
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::uif::EditCommand, _oneof_case_[0]),
@@ -656,6 +758,7 @@ const uint32_t TableStruct_uif_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(prot
   PROTOBUF_FIELD_OFFSET(::uif::EditCommand, kind_),
   PROTOBUF_FIELD_OFFSET(::uif::EditCommand, parent_id_),
   PROTOBUF_FIELD_OFFSET(::uif::EditCommand, object_id_),
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
@@ -775,19 +878,24 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 160, -1, -1, sizeof(::uif::PathNode)},
   { 170, -1, -1, sizeof(::uif::EmptyNode)},
   { 176, -1, -1, sizeof(::uif::ClipRectNode)},
-  { 183, -1, -1, sizeof(::uif::EditCommand)},
-  { 200, -1, -1, sizeof(::uif::EditReq)},
-  { 207, -1, -1, sizeof(::uif::EditResp)},
-  { 213, -1, -1, sizeof(::uif::GetEventsReq)},
-  { 220, -1, -1, sizeof(::uif::CloseEvent)},
-  { 227, -1, -1, sizeof(::uif::MouseEvent)},
-  { 236, -1, -1, sizeof(::uif::KeyboardEvent)},
-  { 244, -1, -1, sizeof(::uif::TextHitEvent)},
-  { 254, -1, -1, sizeof(::uif::Event)},
-  { 265, -1, -1, sizeof(::uif::GetServerPropertiesReq)},
-  { 271, -1, -1, sizeof(::uif::GetServerPropertiesResp)},
-  { 279, -1, -1, sizeof(::uif::SetClearColorReq)},
-  { 286, -1, -1, sizeof(::uif::SetClearColorResp)},
+  { 183, -1, -1, sizeof(::uif::TransformRotate)},
+  { 191, -1, -1, sizeof(::uif::TransformScale)},
+  { 199, -1, -1, sizeof(::uif::TransformTranslate)},
+  { 206, -1, -1, sizeof(::uif::Transform)},
+  { 216, -1, -1, sizeof(::uif::TransformNode)},
+  { 223, -1, -1, sizeof(::uif::EditCommand)},
+  { 241, -1, -1, sizeof(::uif::EditReq)},
+  { 248, -1, -1, sizeof(::uif::EditResp)},
+  { 254, -1, -1, sizeof(::uif::GetEventsReq)},
+  { 261, -1, -1, sizeof(::uif::CloseEvent)},
+  { 268, -1, -1, sizeof(::uif::MouseEvent)},
+  { 277, -1, -1, sizeof(::uif::KeyboardEvent)},
+  { 285, -1, -1, sizeof(::uif::TextHitEvent)},
+  { 295, -1, -1, sizeof(::uif::Event)},
+  { 306, -1, -1, sizeof(::uif::GetServerPropertiesReq)},
+  { 312, -1, -1, sizeof(::uif::GetServerPropertiesResp)},
+  { 320, -1, -1, sizeof(::uif::SetClearColorReq)},
+  { 327, -1, -1, sizeof(::uif::SetClearColorResp)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -810,6 +918,11 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::uif::_PathNode_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::uif::_EmptyNode_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::uif::_ClipRectNode_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::uif::_TransformRotate_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::uif::_TransformScale_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::uif::_TransformTranslate_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::uif::_Transform_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::uif::_TransformNode_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::uif::_EditCommand_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::uif::_EditReq_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::uif::_EditResp_default_instance_),
@@ -877,80 +990,91 @@ const char descriptor_table_protodef_uif_2eproto[] PROTOBUF_SECTION_VARIABLE(pro
   "nd\022\021\n\tis_filled\030\002 \001(\010\022\032\n\006stroke\030\003 \001(\0132\n."
   "uif.Brush\022\024\n\014stroke_width\030\004 \001(\002\"\013\n\tEmpty"
   "Node\",\n\014ClipRectNode\022\034\n\004rect\030\001 \001(\0132\016.uif"
-  ".Rectangle\"\207\003\n\013EditCommand\022\021\n\ttimestamp\030"
-  "\005 \001(\004\022\021\n\tclient_id\030\004 \001(\t\022\'\n\004kind\030\001 \001(\0162\031"
-  ".uif.EditCommand.EditKind\022\021\n\tparent_id\030\002"
-  " \001(\004\022\021\n\tobject_id\030\003 \001(\004\022\"\n\004rect\030\n \001(\0132\022."
-  "uif.RectangleNodeH\000\022\035\n\004text\030\013 \001(\0132\r.uif."
-  "TextNodeH\000\022\035\n\004path\030\014 \001(\0132\r.uif.PathNodeH"
-  "\000\022\037\n\005empty\030\024 \001(\0132\016.uif.EmptyNodeH\000\022!\n\004cl"
-  "ip\030\025 \001(\0132\021.uif.ClipRectNodeH\000\"U\n\010EditKin"
-  "d\022\020\n\014APPEND_CHILD\020\000\022\020\n\014REPLACE_NODE\020\001\022\022\n"
-  "\016CLEANUP_CLIENT\020\002\022\021\n\rDELETE_OBJECT\020\003B\006\n\004"
-  "node\"-\n\007EditReq\022\"\n\010commands\030\002 \003(\0132\020.uif."
-  "EditCommand\"\n\n\010EditResp\"!\n\014GetEventsReq\022"
-  "\021\n\tclient_id\030\001 \001(\t\"\034\n\nCloseEvent\022\016\n\006clos"
-  "ed\030\001 \001(\010\"l\n\nMouseEvent\022 \n\006button\030\001 \001(\0162\020"
-  ".uif.MouseButton\022\036\n\005state\030\002 \001(\0162\017.uif.Mo"
-  "useState\022\034\n\010location\030\003 \001(\0132\n.uif.Point\"\?"
-  "\n\rKeyboardEvent\022\034\n\005state\030\001 \001(\0162\r.uif.Key"
-  "State\022\020\n\010key_code\030\002 \001(\r\"a\n\014TextHitEvent\022"
-  "\036\n\005mouse\030\001 \001(\0132\017.uif.MouseEvent\022\016\n\006offse"
-  "t\030\002 \001(\r\022\016\n\006length\030\003 \001(\r\022\021\n\tobject_id\030\004 \001"
-  "(\004\"\235\001\n\005Event\022 \n\005close\030\n \001(\0132\017.uif.CloseE"
-  "ventH\000\022 \n\005mouse\030\013 \001(\0132\017.uif.MouseEventH\000"
-  "\022!\n\003key\030\014 \001(\0132\022.uif.KeyboardEventH\000\022$\n\007t"
-  "extHit\030\r \001(\0132\021.uif.TextHitEventH\000B\007\n\005eve"
-  "nt\"\030\n\026GetServerPropertiesReq\"F\n\027GetServe"
-  "rPropertiesResp\022\024\n\014window_width\030\001 \001(\r\022\025\n"
-  "\rwindow_height\030\002 \001(\r\"!\n\020SetClearColorReq"
-  "\022\r\n\005color\030\001 \001(\r\"\023\n\021SetClearColorResp*Q\n\t"
-  "FontStyle\022\025\n\021FONT_STYLE_NORMAL\020\000\022\026\n\022FONT"
-  "_STYLE_OBLIQUE\020\001\022\025\n\021FONT_STYLE_ITALIC\020\002*"
-  "\310\002\n\nFontWeight\022\031\n\025FONT_WEIGHT_UNDEFINED\020"
-  "\000\022\024\n\020FONT_WEIGHT_THIN\020d\022\034\n\027FONT_WEIGHT_E"
-  "XTRA_LIGHT\020\310\001\022\026\n\021FONT_WEIGHT_LIGHT\020\254\002\022\033\n"
-  "\026FONT_WEIGHT_SEMI_LIGHT\020\336\002\022\027\n\022FONT_WEIGH"
-  "T_NORMAL\020\220\003\022\027\n\022FONT_WEIGHT_MEDIUM\020\364\003\022\032\n\025"
-  "FONT_WEIGHT_SEMI_BOLD\020\330\004\022\025\n\020FONT_WEIGHT_"
-  "BOLD\020\274\005\022\033\n\026FONT_WEIGHT_EXTRA_BOLD\020\240\006\022\026\n\021"
-  "FONT_WEIGHT_BLACK\020\204\007\022\034\n\027FONT_WEIGHT_EXTR"
-  "A_BLACK\020\266\007*\300\002\n\013FontStretch\022\032\n\026FONT_STRET"
-  "CH_UNDEFINED\020\000\022 \n\034FONT_STRETCH_ULTRA_CON"
-  "DENSED\020\001\022 \n\034FONT_STRETCH_EXTRA_CONDENSED"
-  "\020\002\022\032\n\026FONT_STRETCH_CONDENSED\020\003\022\037\n\033FONT_S"
-  "TRETCH_SEMI_CONDENSED\020\004\022\027\n\023FONT_STRETCH_"
-  "NORMAL\020\005\022\036\n\032FONT_STRETCH_SEMI_EXPANDED\020\006"
-  "\022\031\n\025FONT_STRETCH_EXPANDED\020\007\022\037\n\033FONT_STRE"
-  "TCH_EXTRA_EXPANDED\020\010\022\037\n\033FONT_STRETCH_ULT"
-  "RA_EXPANDED\020\t*m\n\tTextAlign\022\026\n\022TEXT_ALIGN"
-  "_LEADING\020\000\022\027\n\023TEXT_ALIGN_TRAILING\020\001\022\025\n\021T"
-  "EXT_ALIGN_CENTER\020\002\022\030\n\024TEXT_ALIGN_JUSTIFI"
-  "ED\020\003*_\n\016ParagraphAlign\022\030\n\024PARAGRAPH_ALIG"
-  "N_NEAR\020\000\022\027\n\023PARAGRAPH_ALIGN_FAR\020\001\022\032\n\026PAR"
-  "AGRAPH_ALIGN_CENTER\020\002*\?\n\013PCBeginKind\022\027\n\023"
-  "PC_BEGINKIND_FILLED\020\000\022\027\n\023PC_BEGINKIND_HO"
-  "LLOW\020\001*7\n\tPCEndKind\022\023\n\017PC_ENDKIND_OPEN\020\000"
-  "\022\025\n\021PC_ENDKIND_CLOSED\020\001*\226\001\n\013MouseButton\022"
-  "\025\n\021MOUSE_BUTTON_NONE\020\000\022\025\n\021MOUSE_BUTTON_L"
-  "EFT\020\001\022\027\n\023MOUSE_BUTTON_MIDDLE\020\002\022\026\n\022MOUSE_"
-  "BUTTON_RIGHT\020\003\022\023\n\017MOUSE_BUTTON_X1\020\004\022\023\n\017M"
-  "OUSE_BUTTON_X2\020\005*L\n\nMouseState\022\024\n\020MOUSE_"
-  "STATE_NONE\020\000\022\022\n\016MOUSE_STATE_UP\020\001\022\024\n\020MOUS"
-  "E_STATE_DOWN\020\002*/\n\010KeyState\022\t\n\005UNSET\020\000\022\014\n"
-  "\010KEY_DOWN\020\001\022\n\n\006KEY_UP\020\0022\362\001\n\013UIFramework\022"
-  "#\n\004Edit\022\014.uif.EditReq\032\r.uif.EditResp\022,\n\t"
-  "GetEvents\022\021.uif.GetEventsReq\032\n.uif.Event"
-  "0\001\022P\n\023GetServerProperties\022\033.uif.GetServe"
-  "rPropertiesReq\032\034.uif.GetServerProperties"
-  "Resp\022>\n\rSetClearColor\022\025.uif.SetClearColo"
-  "rReq\032\026.uif.SetClearColorRespB\035Z\033github.c"
-  "om/Vbitz/uif_sharedb\006proto3"
+  ".Rectangle\"<\n\017TransformRotate\022\r\n\005angle\030\001"
+  " \001(\002\022\032\n\006center\030\002 \001(\0132\n.uif.Point\":\n\016Tran"
+  "sformScale\022\014\n\004size\030\001 \001(\002\022\032\n\006center\030\002 \001(\013"
+  "2\n.uif.Point\"3\n\022TransformTranslate\022\035\n\ttr"
+  "anslate\030\001 \001(\0132\n.uif.Point\"\224\001\n\tTransform\022"
+  "&\n\006rotate\030\001 \001(\0132\024.uif.TransformRotateH\000\022"
+  "$\n\005scale\030\002 \001(\0132\023.uif.TransformScaleH\000\022,\n"
+  "\ttranslate\030\003 \001(\0132\027.uif.TransformTranslat"
+  "eH\000B\013\n\ttransform\"2\n\rTransformNode\022!\n\ttra"
+  "nsform\030\001 \003(\0132\016.uif.Transform\"\260\003\n\013EditCom"
+  "mand\022\021\n\ttimestamp\030\005 \001(\004\022\021\n\tclient_id\030\004 \001"
+  "(\t\022\'\n\004kind\030\001 \001(\0162\031.uif.EditCommand.EditK"
+  "ind\022\021\n\tparent_id\030\002 \001(\004\022\021\n\tobject_id\030\003 \001("
+  "\004\022\"\n\004rect\030\n \001(\0132\022.uif.RectangleNodeH\000\022\035\n"
+  "\004text\030\013 \001(\0132\r.uif.TextNodeH\000\022\035\n\004path\030\014 \001"
+  "(\0132\r.uif.PathNodeH\000\022\037\n\005empty\030\024 \001(\0132\016.uif"
+  ".EmptyNodeH\000\022!\n\004clip\030\025 \001(\0132\021.uif.ClipRec"
+  "tNodeH\000\022\'\n\ttransform\030\026 \001(\0132\022.uif.Transfo"
+  "rmNodeH\000\"U\n\010EditKind\022\020\n\014APPEND_CHILD\020\000\022\020"
+  "\n\014REPLACE_NODE\020\001\022\022\n\016CLEANUP_CLIENT\020\002\022\021\n\r"
+  "DELETE_OBJECT\020\003B\006\n\004node\"-\n\007EditReq\022\"\n\010co"
+  "mmands\030\002 \003(\0132\020.uif.EditCommand\"\n\n\010EditRe"
+  "sp\"!\n\014GetEventsReq\022\021\n\tclient_id\030\001 \001(\t\"\034\n"
+  "\nCloseEvent\022\016\n\006closed\030\001 \001(\010\"l\n\nMouseEven"
+  "t\022 \n\006button\030\001 \001(\0162\020.uif.MouseButton\022\036\n\005s"
+  "tate\030\002 \001(\0162\017.uif.MouseState\022\034\n\010location\030"
+  "\003 \001(\0132\n.uif.Point\"\?\n\rKeyboardEvent\022\034\n\005st"
+  "ate\030\001 \001(\0162\r.uif.KeyState\022\020\n\010key_code\030\002 \001"
+  "(\r\"a\n\014TextHitEvent\022\036\n\005mouse\030\001 \001(\0132\017.uif."
+  "MouseEvent\022\016\n\006offset\030\002 \001(\r\022\016\n\006length\030\003 \001"
+  "(\r\022\021\n\tobject_id\030\004 \001(\004\"\235\001\n\005Event\022 \n\005close"
+  "\030\n \001(\0132\017.uif.CloseEventH\000\022 \n\005mouse\030\013 \001(\013"
+  "2\017.uif.MouseEventH\000\022!\n\003key\030\014 \001(\0132\022.uif.K"
+  "eyboardEventH\000\022$\n\007textHit\030\r \001(\0132\021.uif.Te"
+  "xtHitEventH\000B\007\n\005event\"\030\n\026GetServerProper"
+  "tiesReq\"F\n\027GetServerPropertiesResp\022\024\n\014wi"
+  "ndow_width\030\001 \001(\r\022\025\n\rwindow_height\030\002 \001(\r\""
+  "!\n\020SetClearColorReq\022\r\n\005color\030\001 \001(\r\"\023\n\021Se"
+  "tClearColorResp*Q\n\tFontStyle\022\025\n\021FONT_STY"
+  "LE_NORMAL\020\000\022\026\n\022FONT_STYLE_OBLIQUE\020\001\022\025\n\021F"
+  "ONT_STYLE_ITALIC\020\002*\310\002\n\nFontWeight\022\031\n\025FON"
+  "T_WEIGHT_UNDEFINED\020\000\022\024\n\020FONT_WEIGHT_THIN"
+  "\020d\022\034\n\027FONT_WEIGHT_EXTRA_LIGHT\020\310\001\022\026\n\021FONT"
+  "_WEIGHT_LIGHT\020\254\002\022\033\n\026FONT_WEIGHT_SEMI_LIG"
+  "HT\020\336\002\022\027\n\022FONT_WEIGHT_NORMAL\020\220\003\022\027\n\022FONT_W"
+  "EIGHT_MEDIUM\020\364\003\022\032\n\025FONT_WEIGHT_SEMI_BOLD"
+  "\020\330\004\022\025\n\020FONT_WEIGHT_BOLD\020\274\005\022\033\n\026FONT_WEIGH"
+  "T_EXTRA_BOLD\020\240\006\022\026\n\021FONT_WEIGHT_BLACK\020\204\007\022"
+  "\034\n\027FONT_WEIGHT_EXTRA_BLACK\020\266\007*\300\002\n\013FontSt"
+  "retch\022\032\n\026FONT_STRETCH_UNDEFINED\020\000\022 \n\034FON"
+  "T_STRETCH_ULTRA_CONDENSED\020\001\022 \n\034FONT_STRE"
+  "TCH_EXTRA_CONDENSED\020\002\022\032\n\026FONT_STRETCH_CO"
+  "NDENSED\020\003\022\037\n\033FONT_STRETCH_SEMI_CONDENSED"
+  "\020\004\022\027\n\023FONT_STRETCH_NORMAL\020\005\022\036\n\032FONT_STRE"
+  "TCH_SEMI_EXPANDED\020\006\022\031\n\025FONT_STRETCH_EXPA"
+  "NDED\020\007\022\037\n\033FONT_STRETCH_EXTRA_EXPANDED\020\010\022"
+  "\037\n\033FONT_STRETCH_ULTRA_EXPANDED\020\t*m\n\tText"
+  "Align\022\026\n\022TEXT_ALIGN_LEADING\020\000\022\027\n\023TEXT_AL"
+  "IGN_TRAILING\020\001\022\025\n\021TEXT_ALIGN_CENTER\020\002\022\030\n"
+  "\024TEXT_ALIGN_JUSTIFIED\020\003*_\n\016ParagraphAlig"
+  "n\022\030\n\024PARAGRAPH_ALIGN_NEAR\020\000\022\027\n\023PARAGRAPH"
+  "_ALIGN_FAR\020\001\022\032\n\026PARAGRAPH_ALIGN_CENTER\020\002"
+  "*\?\n\013PCBeginKind\022\027\n\023PC_BEGINKIND_FILLED\020\000"
+  "\022\027\n\023PC_BEGINKIND_HOLLOW\020\001*7\n\tPCEndKind\022\023"
+  "\n\017PC_ENDKIND_OPEN\020\000\022\025\n\021PC_ENDKIND_CLOSED"
+  "\020\001*\226\001\n\013MouseButton\022\025\n\021MOUSE_BUTTON_NONE\020"
+  "\000\022\025\n\021MOUSE_BUTTON_LEFT\020\001\022\027\n\023MOUSE_BUTTON"
+  "_MIDDLE\020\002\022\026\n\022MOUSE_BUTTON_RIGHT\020\003\022\023\n\017MOU"
+  "SE_BUTTON_X1\020\004\022\023\n\017MOUSE_BUTTON_X2\020\005*L\n\nM"
+  "ouseState\022\024\n\020MOUSE_STATE_NONE\020\000\022\022\n\016MOUSE"
+  "_STATE_UP\020\001\022\024\n\020MOUSE_STATE_DOWN\020\002*/\n\010Key"
+  "State\022\t\n\005UNSET\020\000\022\014\n\010KEY_DOWN\020\001\022\n\n\006KEY_UP"
+  "\020\0022\362\001\n\013UIFramework\022#\n\004Edit\022\014.uif.EditReq"
+  "\032\r.uif.EditResp\022,\n\tGetEvents\022\021.uif.GetEv"
+  "entsReq\032\n.uif.Event0\001\022P\n\023GetServerProper"
+  "ties\022\033.uif.GetServerPropertiesReq\032\034.uif."
+  "GetServerPropertiesResp\022>\n\rSetClearColor"
+  "\022\025.uif.SetClearColorReq\032\026.uif.SetClearCo"
+  "lorRespB\035Z\033github.com/Vbitz/uif_sharedb\006"
+  "proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_uif_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_uif_2eproto = {
-  false, false, 4787, descriptor_table_protodef_uif_2eproto, "uif.proto", 
-  &descriptor_table_uif_2eproto_once, nullptr, 0, 32,
+  false, false, 5206, descriptor_table_protodef_uif_2eproto, "uif.proto", 
+  &descriptor_table_uif_2eproto_once, nullptr, 0, 37,
   schemas, file_default_instances, TableStruct_uif_2eproto::offsets,
   file_level_metadata_uif_2eproto, file_level_enum_descriptors_uif_2eproto, file_level_service_descriptors_uif_2eproto,
 };
@@ -6648,6 +6772,1221 @@ void ClipRectNode::InternalSwap(ClipRectNode* other) {
 
 // ===================================================================
 
+class TransformRotate::_Internal {
+ public:
+  static const ::uif::Point& center(const TransformRotate* msg);
+};
+
+const ::uif::Point&
+TransformRotate::_Internal::center(const TransformRotate* msg) {
+  return *msg->center_;
+}
+TransformRotate::TransformRotate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:uif.TransformRotate)
+}
+TransformRotate::TransformRotate(const TransformRotate& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_center()) {
+    center_ = new ::uif::Point(*from.center_);
+  } else {
+    center_ = nullptr;
+  }
+  angle_ = from.angle_;
+  // @@protoc_insertion_point(copy_constructor:uif.TransformRotate)
+}
+
+inline void TransformRotate::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&center_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&angle_) -
+    reinterpret_cast<char*>(&center_)) + sizeof(angle_));
+}
+
+TransformRotate::~TransformRotate() {
+  // @@protoc_insertion_point(destructor:uif.TransformRotate)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void TransformRotate::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete center_;
+}
+
+void TransformRotate::ArenaDtor(void* object) {
+  TransformRotate* _this = reinterpret_cast< TransformRotate* >(object);
+  (void)_this;
+}
+void TransformRotate::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void TransformRotate::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TransformRotate::Clear() {
+// @@protoc_insertion_point(message_clear_start:uif.TransformRotate)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && center_ != nullptr) {
+    delete center_;
+  }
+  center_ = nullptr;
+  angle_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TransformRotate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // float angle = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
+          angle_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // .uif.Point center = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_center(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* TransformRotate::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:uif.TransformRotate)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float angle = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_angle = this->_internal_angle();
+  uint32_t raw_angle;
+  memcpy(&raw_angle, &tmp_angle, sizeof(tmp_angle));
+  if (raw_angle != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_angle(), target);
+  }
+
+  // .uif.Point center = 2;
+  if (this->_internal_has_center()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::center(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:uif.TransformRotate)
+  return target;
+}
+
+size_t TransformRotate::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:uif.TransformRotate)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .uif.Point center = 2;
+  if (this->_internal_has_center()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *center_);
+  }
+
+  // float angle = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_angle = this->_internal_angle();
+  uint32_t raw_angle;
+  memcpy(&raw_angle, &tmp_angle, sizeof(tmp_angle));
+  if (raw_angle != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TransformRotate::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    TransformRotate::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TransformRotate::GetClassData() const { return &_class_data_; }
+
+void TransformRotate::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<TransformRotate *>(to)->MergeFrom(
+      static_cast<const TransformRotate &>(from));
+}
+
+
+void TransformRotate::MergeFrom(const TransformRotate& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:uif.TransformRotate)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_center()) {
+    _internal_mutable_center()->::uif::Point::MergeFrom(from._internal_center());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_angle = from._internal_angle();
+  uint32_t raw_angle;
+  memcpy(&raw_angle, &tmp_angle, sizeof(tmp_angle));
+  if (raw_angle != 0) {
+    _internal_set_angle(from._internal_angle());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TransformRotate::CopyFrom(const TransformRotate& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:uif.TransformRotate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TransformRotate::IsInitialized() const {
+  return true;
+}
+
+void TransformRotate::InternalSwap(TransformRotate* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TransformRotate, angle_)
+      + sizeof(TransformRotate::angle_)
+      - PROTOBUF_FIELD_OFFSET(TransformRotate, center_)>(
+          reinterpret_cast<char*>(&center_),
+          reinterpret_cast<char*>(&other->center_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TransformRotate::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
+      file_level_metadata_uif_2eproto[19]);
+}
+
+// ===================================================================
+
+class TransformScale::_Internal {
+ public:
+  static const ::uif::Point& center(const TransformScale* msg);
+};
+
+const ::uif::Point&
+TransformScale::_Internal::center(const TransformScale* msg) {
+  return *msg->center_;
+}
+TransformScale::TransformScale(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:uif.TransformScale)
+}
+TransformScale::TransformScale(const TransformScale& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_center()) {
+    center_ = new ::uif::Point(*from.center_);
+  } else {
+    center_ = nullptr;
+  }
+  size_ = from.size_;
+  // @@protoc_insertion_point(copy_constructor:uif.TransformScale)
+}
+
+inline void TransformScale::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&center_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&size_) -
+    reinterpret_cast<char*>(&center_)) + sizeof(size_));
+}
+
+TransformScale::~TransformScale() {
+  // @@protoc_insertion_point(destructor:uif.TransformScale)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void TransformScale::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete center_;
+}
+
+void TransformScale::ArenaDtor(void* object) {
+  TransformScale* _this = reinterpret_cast< TransformScale* >(object);
+  (void)_this;
+}
+void TransformScale::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void TransformScale::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TransformScale::Clear() {
+// @@protoc_insertion_point(message_clear_start:uif.TransformScale)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && center_ != nullptr) {
+    delete center_;
+  }
+  center_ = nullptr;
+  size_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TransformScale::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // float size = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
+          size_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // .uif.Point center = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_center(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* TransformScale::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:uif.TransformScale)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float size = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_size = this->_internal_size();
+  uint32_t raw_size;
+  memcpy(&raw_size, &tmp_size, sizeof(tmp_size));
+  if (raw_size != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_size(), target);
+  }
+
+  // .uif.Point center = 2;
+  if (this->_internal_has_center()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::center(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:uif.TransformScale)
+  return target;
+}
+
+size_t TransformScale::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:uif.TransformScale)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .uif.Point center = 2;
+  if (this->_internal_has_center()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *center_);
+  }
+
+  // float size = 1;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_size = this->_internal_size();
+  uint32_t raw_size;
+  memcpy(&raw_size, &tmp_size, sizeof(tmp_size));
+  if (raw_size != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TransformScale::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    TransformScale::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TransformScale::GetClassData() const { return &_class_data_; }
+
+void TransformScale::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<TransformScale *>(to)->MergeFrom(
+      static_cast<const TransformScale &>(from));
+}
+
+
+void TransformScale::MergeFrom(const TransformScale& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:uif.TransformScale)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_center()) {
+    _internal_mutable_center()->::uif::Point::MergeFrom(from._internal_center());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_size = from._internal_size();
+  uint32_t raw_size;
+  memcpy(&raw_size, &tmp_size, sizeof(tmp_size));
+  if (raw_size != 0) {
+    _internal_set_size(from._internal_size());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TransformScale::CopyFrom(const TransformScale& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:uif.TransformScale)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TransformScale::IsInitialized() const {
+  return true;
+}
+
+void TransformScale::InternalSwap(TransformScale* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TransformScale, size_)
+      + sizeof(TransformScale::size_)
+      - PROTOBUF_FIELD_OFFSET(TransformScale, center_)>(
+          reinterpret_cast<char*>(&center_),
+          reinterpret_cast<char*>(&other->center_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TransformScale::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
+      file_level_metadata_uif_2eproto[20]);
+}
+
+// ===================================================================
+
+class TransformTranslate::_Internal {
+ public:
+  static const ::uif::Point& translate(const TransformTranslate* msg);
+};
+
+const ::uif::Point&
+TransformTranslate::_Internal::translate(const TransformTranslate* msg) {
+  return *msg->translate_;
+}
+TransformTranslate::TransformTranslate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:uif.TransformTranslate)
+}
+TransformTranslate::TransformTranslate(const TransformTranslate& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_translate()) {
+    translate_ = new ::uif::Point(*from.translate_);
+  } else {
+    translate_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:uif.TransformTranslate)
+}
+
+inline void TransformTranslate::SharedCtor() {
+translate_ = nullptr;
+}
+
+TransformTranslate::~TransformTranslate() {
+  // @@protoc_insertion_point(destructor:uif.TransformTranslate)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void TransformTranslate::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete translate_;
+}
+
+void TransformTranslate::ArenaDtor(void* object) {
+  TransformTranslate* _this = reinterpret_cast< TransformTranslate* >(object);
+  (void)_this;
+}
+void TransformTranslate::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void TransformTranslate::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TransformTranslate::Clear() {
+// @@protoc_insertion_point(message_clear_start:uif.TransformTranslate)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && translate_ != nullptr) {
+    delete translate_;
+  }
+  translate_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TransformTranslate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .uif.Point translate = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_translate(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* TransformTranslate::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:uif.TransformTranslate)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .uif.Point translate = 1;
+  if (this->_internal_has_translate()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::translate(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:uif.TransformTranslate)
+  return target;
+}
+
+size_t TransformTranslate::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:uif.TransformTranslate)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .uif.Point translate = 1;
+  if (this->_internal_has_translate()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *translate_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TransformTranslate::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    TransformTranslate::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TransformTranslate::GetClassData() const { return &_class_data_; }
+
+void TransformTranslate::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<TransformTranslate *>(to)->MergeFrom(
+      static_cast<const TransformTranslate &>(from));
+}
+
+
+void TransformTranslate::MergeFrom(const TransformTranslate& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:uif.TransformTranslate)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_translate()) {
+    _internal_mutable_translate()->::uif::Point::MergeFrom(from._internal_translate());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TransformTranslate::CopyFrom(const TransformTranslate& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:uif.TransformTranslate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TransformTranslate::IsInitialized() const {
+  return true;
+}
+
+void TransformTranslate::InternalSwap(TransformTranslate* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(translate_, other->translate_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TransformTranslate::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
+      file_level_metadata_uif_2eproto[21]);
+}
+
+// ===================================================================
+
+class Transform::_Internal {
+ public:
+  static const ::uif::TransformRotate& rotate(const Transform* msg);
+  static const ::uif::TransformScale& scale(const Transform* msg);
+  static const ::uif::TransformTranslate& translate(const Transform* msg);
+};
+
+const ::uif::TransformRotate&
+Transform::_Internal::rotate(const Transform* msg) {
+  return *msg->transform_.rotate_;
+}
+const ::uif::TransformScale&
+Transform::_Internal::scale(const Transform* msg) {
+  return *msg->transform_.scale_;
+}
+const ::uif::TransformTranslate&
+Transform::_Internal::translate(const Transform* msg) {
+  return *msg->transform_.translate_;
+}
+void Transform::set_allocated_rotate(::uif::TransformRotate* rotate) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_transform();
+  if (rotate) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::uif::TransformRotate>::GetOwningArena(rotate);
+    if (message_arena != submessage_arena) {
+      rotate = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, rotate, submessage_arena);
+    }
+    set_has_rotate();
+    transform_.rotate_ = rotate;
+  }
+  // @@protoc_insertion_point(field_set_allocated:uif.Transform.rotate)
+}
+void Transform::set_allocated_scale(::uif::TransformScale* scale) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_transform();
+  if (scale) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::uif::TransformScale>::GetOwningArena(scale);
+    if (message_arena != submessage_arena) {
+      scale = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, scale, submessage_arena);
+    }
+    set_has_scale();
+    transform_.scale_ = scale;
+  }
+  // @@protoc_insertion_point(field_set_allocated:uif.Transform.scale)
+}
+void Transform::set_allocated_translate(::uif::TransformTranslate* translate) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_transform();
+  if (translate) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::uif::TransformTranslate>::GetOwningArena(translate);
+    if (message_arena != submessage_arena) {
+      translate = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, translate, submessage_arena);
+    }
+    set_has_translate();
+    transform_.translate_ = translate;
+  }
+  // @@protoc_insertion_point(field_set_allocated:uif.Transform.translate)
+}
+Transform::Transform(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:uif.Transform)
+}
+Transform::Transform(const Transform& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_transform();
+  switch (from.transform_case()) {
+    case kRotate: {
+      _internal_mutable_rotate()->::uif::TransformRotate::MergeFrom(from._internal_rotate());
+      break;
+    }
+    case kScale: {
+      _internal_mutable_scale()->::uif::TransformScale::MergeFrom(from._internal_scale());
+      break;
+    }
+    case kTranslate: {
+      _internal_mutable_translate()->::uif::TransformTranslate::MergeFrom(from._internal_translate());
+      break;
+    }
+    case TRANSFORM_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:uif.Transform)
+}
+
+inline void Transform::SharedCtor() {
+clear_has_transform();
+}
+
+Transform::~Transform() {
+  // @@protoc_insertion_point(destructor:uif.Transform)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void Transform::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_transform()) {
+    clear_transform();
+  }
+}
+
+void Transform::ArenaDtor(void* object) {
+  Transform* _this = reinterpret_cast< Transform* >(object);
+  (void)_this;
+}
+void Transform::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void Transform::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void Transform::clear_transform() {
+// @@protoc_insertion_point(one_of_clear_start:uif.Transform)
+  switch (transform_case()) {
+    case kRotate: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete transform_.rotate_;
+      }
+      break;
+    }
+    case kScale: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete transform_.scale_;
+      }
+      break;
+    }
+    case kTranslate: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete transform_.translate_;
+      }
+      break;
+    }
+    case TRANSFORM_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = TRANSFORM_NOT_SET;
+}
+
+
+void Transform::Clear() {
+// @@protoc_insertion_point(message_clear_start:uif.Transform)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_transform();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Transform::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .uif.TransformRotate rotate = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_rotate(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .uif.TransformScale scale = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_scale(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .uif.TransformTranslate translate = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_translate(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Transform::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:uif.Transform)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .uif.TransformRotate rotate = 1;
+  if (_internal_has_rotate()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::rotate(this), target, stream);
+  }
+
+  // .uif.TransformScale scale = 2;
+  if (_internal_has_scale()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::scale(this), target, stream);
+  }
+
+  // .uif.TransformTranslate translate = 3;
+  if (_internal_has_translate()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::translate(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:uif.Transform)
+  return target;
+}
+
+size_t Transform::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:uif.Transform)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (transform_case()) {
+    // .uif.TransformRotate rotate = 1;
+    case kRotate: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *transform_.rotate_);
+      break;
+    }
+    // .uif.TransformScale scale = 2;
+    case kScale: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *transform_.scale_);
+      break;
+    }
+    // .uif.TransformTranslate translate = 3;
+    case kTranslate: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *transform_.translate_);
+      break;
+    }
+    case TRANSFORM_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Transform::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    Transform::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Transform::GetClassData() const { return &_class_data_; }
+
+void Transform::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<Transform *>(to)->MergeFrom(
+      static_cast<const Transform &>(from));
+}
+
+
+void Transform::MergeFrom(const Transform& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:uif.Transform)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.transform_case()) {
+    case kRotate: {
+      _internal_mutable_rotate()->::uif::TransformRotate::MergeFrom(from._internal_rotate());
+      break;
+    }
+    case kScale: {
+      _internal_mutable_scale()->::uif::TransformScale::MergeFrom(from._internal_scale());
+      break;
+    }
+    case kTranslate: {
+      _internal_mutable_translate()->::uif::TransformTranslate::MergeFrom(from._internal_translate());
+      break;
+    }
+    case TRANSFORM_NOT_SET: {
+      break;
+    }
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Transform::CopyFrom(const Transform& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:uif.Transform)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Transform::IsInitialized() const {
+  return true;
+}
+
+void Transform::InternalSwap(Transform* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(transform_, other->transform_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Transform::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
+      file_level_metadata_uif_2eproto[22]);
+}
+
+// ===================================================================
+
+class TransformNode::_Internal {
+ public:
+};
+
+TransformNode::TransformNode(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  transform_(arena) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:uif.TransformNode)
+}
+TransformNode::TransformNode(const TransformNode& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      transform_(from.transform_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:uif.TransformNode)
+}
+
+inline void TransformNode::SharedCtor() {
+}
+
+TransformNode::~TransformNode() {
+  // @@protoc_insertion_point(destructor:uif.TransformNode)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void TransformNode::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void TransformNode::ArenaDtor(void* object) {
+  TransformNode* _this = reinterpret_cast< TransformNode* >(object);
+  (void)_this;
+}
+void TransformNode::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void TransformNode::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void TransformNode::Clear() {
+// @@protoc_insertion_point(message_clear_start:uif.TransformNode)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  transform_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TransformNode::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .uif.Transform transform = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_transform(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* TransformNode::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:uif.TransformNode)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .uif.Transform transform = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_transform_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_transform(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:uif.TransformNode)
+  return target;
+}
+
+size_t TransformNode::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:uif.TransformNode)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .uif.Transform transform = 1;
+  total_size += 1UL * this->_internal_transform_size();
+  for (const auto& msg : this->transform_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TransformNode::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    TransformNode::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TransformNode::GetClassData() const { return &_class_data_; }
+
+void TransformNode::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<TransformNode *>(to)->MergeFrom(
+      static_cast<const TransformNode &>(from));
+}
+
+
+void TransformNode::MergeFrom(const TransformNode& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:uif.TransformNode)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  transform_.MergeFrom(from.transform_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TransformNode::CopyFrom(const TransformNode& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:uif.TransformNode)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TransformNode::IsInitialized() const {
+  return true;
+}
+
+void TransformNode::InternalSwap(TransformNode* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  transform_.InternalSwap(&other->transform_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TransformNode::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
+      file_level_metadata_uif_2eproto[23]);
+}
+
+// ===================================================================
+
 class EditCommand::_Internal {
  public:
   static const ::uif::RectangleNode& rect(const EditCommand* msg);
@@ -6655,6 +7994,7 @@ class EditCommand::_Internal {
   static const ::uif::PathNode& path(const EditCommand* msg);
   static const ::uif::EmptyNode& empty(const EditCommand* msg);
   static const ::uif::ClipRectNode& clip(const EditCommand* msg);
+  static const ::uif::TransformNode& transform(const EditCommand* msg);
 };
 
 const ::uif::RectangleNode&
@@ -6676,6 +8016,10 @@ EditCommand::_Internal::empty(const EditCommand* msg) {
 const ::uif::ClipRectNode&
 EditCommand::_Internal::clip(const EditCommand* msg) {
   return *msg->node_.clip_;
+}
+const ::uif::TransformNode&
+EditCommand::_Internal::transform(const EditCommand* msg) {
+  return *msg->node_.transform_;
 }
 void EditCommand::set_allocated_rect(::uif::RectangleNode* rect) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -6752,6 +8096,21 @@ void EditCommand::set_allocated_clip(::uif::ClipRectNode* clip) {
   }
   // @@protoc_insertion_point(field_set_allocated:uif.EditCommand.clip)
 }
+void EditCommand::set_allocated_transform(::uif::TransformNode* transform) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_node();
+  if (transform) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::uif::TransformNode>::GetOwningArena(transform);
+    if (message_arena != submessage_arena) {
+      transform = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transform, submessage_arena);
+    }
+    set_has_transform();
+    node_.transform_ = transform;
+  }
+  // @@protoc_insertion_point(field_set_allocated:uif.EditCommand.transform)
+}
 EditCommand::EditCommand(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -6795,6 +8154,10 @@ EditCommand::EditCommand(const EditCommand& from)
     }
     case kClip: {
       _internal_mutable_clip()->::uif::ClipRectNode::MergeFrom(from._internal_clip());
+      break;
+    }
+    case kTransform: {
+      _internal_mutable_transform()->::uif::TransformNode::MergeFrom(from._internal_transform());
       break;
     }
     case NODE_NOT_SET: {
@@ -6871,6 +8234,12 @@ void EditCommand::clear_node() {
     case kClip: {
       if (GetArenaForAllocation() == nullptr) {
         delete node_.clip_;
+      }
+      break;
+    }
+    case kTransform: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete node_.transform_;
       }
       break;
     }
@@ -6985,6 +8354,14 @@ const char* EditCommand::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
         } else
           goto handle_unusual;
         continue;
+      // .uif.TransformNode transform = 22;
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 178)) {
+          ptr = ctx->ParseMessage(_internal_mutable_transform(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -7089,6 +8466,14 @@ uint8_t* EditCommand::_InternalSerialize(
         21, _Internal::clip(this), target, stream);
   }
 
+  // .uif.TransformNode transform = 22;
+  if (_internal_has_transform()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        22, _Internal::transform(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -7169,6 +8554,13 @@ size_t EditCommand::ByteSizeLong() const {
           *node_.clip_);
       break;
     }
+    // .uif.TransformNode transform = 22;
+    case kTransform: {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *node_.transform_);
+      break;
+    }
     case NODE_NOT_SET: {
       break;
     }
@@ -7231,6 +8623,10 @@ void EditCommand::MergeFrom(const EditCommand& from) {
       _internal_mutable_clip()->::uif::ClipRectNode::MergeFrom(from._internal_clip());
       break;
     }
+    case kTransform: {
+      _internal_mutable_transform()->::uif::TransformNode::MergeFrom(from._internal_transform());
+      break;
+    }
     case NODE_NOT_SET: {
       break;
     }
@@ -7272,7 +8668,7 @@ void EditCommand::InternalSwap(EditCommand* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata EditCommand::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[19]);
+      file_level_metadata_uif_2eproto[24]);
 }
 
 // ===================================================================
@@ -7457,7 +8853,7 @@ void EditReq::InternalSwap(EditReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata EditReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[20]);
+      file_level_metadata_uif_2eproto[25]);
 }
 
 // ===================================================================
@@ -7496,7 +8892,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*EditResp::GetClassData() const
 ::PROTOBUF_NAMESPACE_ID::Metadata EditResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[21]);
+      file_level_metadata_uif_2eproto[26]);
 }
 
 // ===================================================================
@@ -7699,7 +9095,7 @@ void GetEventsReq::InternalSwap(GetEventsReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetEventsReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[22]);
+      file_level_metadata_uif_2eproto[27]);
 }
 
 // ===================================================================
@@ -7877,7 +9273,7 @@ void CloseEvent::InternalSwap(CloseEvent* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CloseEvent::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[23]);
+      file_level_metadata_uif_2eproto[28]);
 }
 
 // ===================================================================
@@ -8136,7 +9532,7 @@ void MouseEvent::InternalSwap(MouseEvent* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MouseEvent::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[24]);
+      file_level_metadata_uif_2eproto[29]);
 }
 
 // ===================================================================
@@ -8351,7 +9747,7 @@ void KeyboardEvent::InternalSwap(KeyboardEvent* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata KeyboardEvent::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[25]);
+      file_level_metadata_uif_2eproto[30]);
 }
 
 // ===================================================================
@@ -8626,7 +10022,7 @@ void TextHitEvent::InternalSwap(TextHitEvent* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata TextHitEvent::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[26]);
+      file_level_metadata_uif_2eproto[31]);
 }
 
 // ===================================================================
@@ -9040,7 +10436,7 @@ void Event::InternalSwap(Event* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Event::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[27]);
+      file_level_metadata_uif_2eproto[32]);
 }
 
 // ===================================================================
@@ -9079,7 +10475,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetServerPropertiesReq::GetCla
 ::PROTOBUF_NAMESPACE_ID::Metadata GetServerPropertiesReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[28]);
+      file_level_metadata_uif_2eproto[33]);
 }
 
 // ===================================================================
@@ -9291,7 +10687,7 @@ void GetServerPropertiesResp::InternalSwap(GetServerPropertiesResp* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetServerPropertiesResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[29]);
+      file_level_metadata_uif_2eproto[34]);
 }
 
 // ===================================================================
@@ -9469,7 +10865,7 @@ void SetClearColorReq::InternalSwap(SetClearColorReq* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata SetClearColorReq::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[30]);
+      file_level_metadata_uif_2eproto[35]);
 }
 
 // ===================================================================
@@ -9508,7 +10904,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetClearColorResp::GetClassDat
 ::PROTOBUF_NAMESPACE_ID::Metadata SetClearColorResp::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_uif_2eproto_getter, &descriptor_table_uif_2eproto_once,
-      file_level_metadata_uif_2eproto[31]);
+      file_level_metadata_uif_2eproto[36]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -9570,6 +10966,21 @@ template<> PROTOBUF_NOINLINE ::uif::EmptyNode* Arena::CreateMaybeMessage< ::uif:
 }
 template<> PROTOBUF_NOINLINE ::uif::ClipRectNode* Arena::CreateMaybeMessage< ::uif::ClipRectNode >(Arena* arena) {
   return Arena::CreateMessageInternal< ::uif::ClipRectNode >(arena);
+}
+template<> PROTOBUF_NOINLINE ::uif::TransformRotate* Arena::CreateMaybeMessage< ::uif::TransformRotate >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::uif::TransformRotate >(arena);
+}
+template<> PROTOBUF_NOINLINE ::uif::TransformScale* Arena::CreateMaybeMessage< ::uif::TransformScale >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::uif::TransformScale >(arena);
+}
+template<> PROTOBUF_NOINLINE ::uif::TransformTranslate* Arena::CreateMaybeMessage< ::uif::TransformTranslate >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::uif::TransformTranslate >(arena);
+}
+template<> PROTOBUF_NOINLINE ::uif::Transform* Arena::CreateMaybeMessage< ::uif::Transform >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::uif::Transform >(arena);
+}
+template<> PROTOBUF_NOINLINE ::uif::TransformNode* Arena::CreateMaybeMessage< ::uif::TransformNode >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::uif::TransformNode >(arena);
 }
 template<> PROTOBUF_NOINLINE ::uif::EditCommand* Arena::CreateMaybeMessage< ::uif::EditCommand >(Arena* arena) {
   return Arena::CreateMessageInternal< ::uif::EditCommand >(arena);
