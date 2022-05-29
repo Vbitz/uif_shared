@@ -302,8 +302,8 @@ struct TransformRotateDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TransformRotateDefaultTypeInternal _TransformRotate_default_instance_;
 constexpr TransformScale::TransformScale(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : center_(nullptr)
-  , size_(0){}
+  : size_(nullptr)
+  , center_(nullptr){}
 struct TransformScaleDefaultTypeInternal {
   constexpr TransformScaleDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -991,89 +991,89 @@ const char descriptor_table_protodef_uif_2eproto[] PROTOBUF_SECTION_VARIABLE(pro
   "uif.Brush\022\024\n\014stroke_width\030\004 \001(\002\"\013\n\tEmpty"
   "Node\",\n\014ClipRectNode\022\034\n\004rect\030\001 \001(\0132\016.uif"
   ".Rectangle\"<\n\017TransformRotate\022\r\n\005angle\030\001"
-  " \001(\002\022\032\n\006center\030\002 \001(\0132\n.uif.Point\":\n\016Tran"
-  "sformScale\022\014\n\004size\030\001 \001(\002\022\032\n\006center\030\002 \001(\013"
-  "2\n.uif.Point\"3\n\022TransformTranslate\022\035\n\ttr"
-  "anslate\030\001 \001(\0132\n.uif.Point\"\224\001\n\tTransform\022"
-  "&\n\006rotate\030\001 \001(\0132\024.uif.TransformRotateH\000\022"
-  "$\n\005scale\030\002 \001(\0132\023.uif.TransformScaleH\000\022,\n"
-  "\ttranslate\030\003 \001(\0132\027.uif.TransformTranslat"
-  "eH\000B\013\n\ttransform\"2\n\rTransformNode\022!\n\ttra"
-  "nsform\030\001 \003(\0132\016.uif.Transform\"\260\003\n\013EditCom"
-  "mand\022\021\n\ttimestamp\030\005 \001(\004\022\021\n\tclient_id\030\004 \001"
-  "(\t\022\'\n\004kind\030\001 \001(\0162\031.uif.EditCommand.EditK"
-  "ind\022\021\n\tparent_id\030\002 \001(\004\022\021\n\tobject_id\030\003 \001("
-  "\004\022\"\n\004rect\030\n \001(\0132\022.uif.RectangleNodeH\000\022\035\n"
-  "\004text\030\013 \001(\0132\r.uif.TextNodeH\000\022\035\n\004path\030\014 \001"
-  "(\0132\r.uif.PathNodeH\000\022\037\n\005empty\030\024 \001(\0132\016.uif"
-  ".EmptyNodeH\000\022!\n\004clip\030\025 \001(\0132\021.uif.ClipRec"
-  "tNodeH\000\022\'\n\ttransform\030\026 \001(\0132\022.uif.Transfo"
-  "rmNodeH\000\"U\n\010EditKind\022\020\n\014APPEND_CHILD\020\000\022\020"
-  "\n\014REPLACE_NODE\020\001\022\022\n\016CLEANUP_CLIENT\020\002\022\021\n\r"
-  "DELETE_OBJECT\020\003B\006\n\004node\"-\n\007EditReq\022\"\n\010co"
-  "mmands\030\002 \003(\0132\020.uif.EditCommand\"\n\n\010EditRe"
-  "sp\"!\n\014GetEventsReq\022\021\n\tclient_id\030\001 \001(\t\"\034\n"
-  "\nCloseEvent\022\016\n\006closed\030\001 \001(\010\"l\n\nMouseEven"
-  "t\022 \n\006button\030\001 \001(\0162\020.uif.MouseButton\022\036\n\005s"
-  "tate\030\002 \001(\0162\017.uif.MouseState\022\034\n\010location\030"
-  "\003 \001(\0132\n.uif.Point\"\?\n\rKeyboardEvent\022\034\n\005st"
-  "ate\030\001 \001(\0162\r.uif.KeyState\022\020\n\010key_code\030\002 \001"
-  "(\r\"a\n\014TextHitEvent\022\036\n\005mouse\030\001 \001(\0132\017.uif."
-  "MouseEvent\022\016\n\006offset\030\002 \001(\r\022\016\n\006length\030\003 \001"
-  "(\r\022\021\n\tobject_id\030\004 \001(\004\"\235\001\n\005Event\022 \n\005close"
-  "\030\n \001(\0132\017.uif.CloseEventH\000\022 \n\005mouse\030\013 \001(\013"
-  "2\017.uif.MouseEventH\000\022!\n\003key\030\014 \001(\0132\022.uif.K"
-  "eyboardEventH\000\022$\n\007textHit\030\r \001(\0132\021.uif.Te"
-  "xtHitEventH\000B\007\n\005event\"\030\n\026GetServerProper"
-  "tiesReq\"F\n\027GetServerPropertiesResp\022\024\n\014wi"
-  "ndow_width\030\001 \001(\r\022\025\n\rwindow_height\030\002 \001(\r\""
-  "!\n\020SetClearColorReq\022\r\n\005color\030\001 \001(\r\"\023\n\021Se"
-  "tClearColorResp*Q\n\tFontStyle\022\025\n\021FONT_STY"
-  "LE_NORMAL\020\000\022\026\n\022FONT_STYLE_OBLIQUE\020\001\022\025\n\021F"
-  "ONT_STYLE_ITALIC\020\002*\310\002\n\nFontWeight\022\031\n\025FON"
-  "T_WEIGHT_UNDEFINED\020\000\022\024\n\020FONT_WEIGHT_THIN"
-  "\020d\022\034\n\027FONT_WEIGHT_EXTRA_LIGHT\020\310\001\022\026\n\021FONT"
-  "_WEIGHT_LIGHT\020\254\002\022\033\n\026FONT_WEIGHT_SEMI_LIG"
-  "HT\020\336\002\022\027\n\022FONT_WEIGHT_NORMAL\020\220\003\022\027\n\022FONT_W"
-  "EIGHT_MEDIUM\020\364\003\022\032\n\025FONT_WEIGHT_SEMI_BOLD"
-  "\020\330\004\022\025\n\020FONT_WEIGHT_BOLD\020\274\005\022\033\n\026FONT_WEIGH"
-  "T_EXTRA_BOLD\020\240\006\022\026\n\021FONT_WEIGHT_BLACK\020\204\007\022"
-  "\034\n\027FONT_WEIGHT_EXTRA_BLACK\020\266\007*\300\002\n\013FontSt"
-  "retch\022\032\n\026FONT_STRETCH_UNDEFINED\020\000\022 \n\034FON"
-  "T_STRETCH_ULTRA_CONDENSED\020\001\022 \n\034FONT_STRE"
-  "TCH_EXTRA_CONDENSED\020\002\022\032\n\026FONT_STRETCH_CO"
-  "NDENSED\020\003\022\037\n\033FONT_STRETCH_SEMI_CONDENSED"
-  "\020\004\022\027\n\023FONT_STRETCH_NORMAL\020\005\022\036\n\032FONT_STRE"
-  "TCH_SEMI_EXPANDED\020\006\022\031\n\025FONT_STRETCH_EXPA"
-  "NDED\020\007\022\037\n\033FONT_STRETCH_EXTRA_EXPANDED\020\010\022"
-  "\037\n\033FONT_STRETCH_ULTRA_EXPANDED\020\t*m\n\tText"
-  "Align\022\026\n\022TEXT_ALIGN_LEADING\020\000\022\027\n\023TEXT_AL"
-  "IGN_TRAILING\020\001\022\025\n\021TEXT_ALIGN_CENTER\020\002\022\030\n"
-  "\024TEXT_ALIGN_JUSTIFIED\020\003*_\n\016ParagraphAlig"
-  "n\022\030\n\024PARAGRAPH_ALIGN_NEAR\020\000\022\027\n\023PARAGRAPH"
-  "_ALIGN_FAR\020\001\022\032\n\026PARAGRAPH_ALIGN_CENTER\020\002"
-  "*\?\n\013PCBeginKind\022\027\n\023PC_BEGINKIND_FILLED\020\000"
-  "\022\027\n\023PC_BEGINKIND_HOLLOW\020\001*7\n\tPCEndKind\022\023"
-  "\n\017PC_ENDKIND_OPEN\020\000\022\025\n\021PC_ENDKIND_CLOSED"
-  "\020\001*\226\001\n\013MouseButton\022\025\n\021MOUSE_BUTTON_NONE\020"
-  "\000\022\025\n\021MOUSE_BUTTON_LEFT\020\001\022\027\n\023MOUSE_BUTTON"
-  "_MIDDLE\020\002\022\026\n\022MOUSE_BUTTON_RIGHT\020\003\022\023\n\017MOU"
-  "SE_BUTTON_X1\020\004\022\023\n\017MOUSE_BUTTON_X2\020\005*L\n\nM"
-  "ouseState\022\024\n\020MOUSE_STATE_NONE\020\000\022\022\n\016MOUSE"
-  "_STATE_UP\020\001\022\024\n\020MOUSE_STATE_DOWN\020\002*/\n\010Key"
-  "State\022\t\n\005UNSET\020\000\022\014\n\010KEY_DOWN\020\001\022\n\n\006KEY_UP"
-  "\020\0022\362\001\n\013UIFramework\022#\n\004Edit\022\014.uif.EditReq"
-  "\032\r.uif.EditResp\022,\n\tGetEvents\022\021.uif.GetEv"
-  "entsReq\032\n.uif.Event0\001\022P\n\023GetServerProper"
-  "ties\022\033.uif.GetServerPropertiesReq\032\034.uif."
-  "GetServerPropertiesResp\022>\n\rSetClearColor"
-  "\022\025.uif.SetClearColorReq\032\026.uif.SetClearCo"
-  "lorRespB\035Z\033github.com/Vbitz/uif_sharedb\006"
-  "proto3"
+  " \001(\002\022\032\n\006center\030\002 \001(\0132\n.uif.Point\"F\n\016Tran"
+  "sformScale\022\030\n\004size\030\001 \001(\0132\n.uif.Point\022\032\n\006"
+  "center\030\002 \001(\0132\n.uif.Point\"3\n\022TransformTra"
+  "nslate\022\035\n\ttranslate\030\001 \001(\0132\n.uif.Point\"\224\001"
+  "\n\tTransform\022&\n\006rotate\030\001 \001(\0132\024.uif.Transf"
+  "ormRotateH\000\022$\n\005scale\030\002 \001(\0132\023.uif.Transfo"
+  "rmScaleH\000\022,\n\ttranslate\030\003 \001(\0132\027.uif.Trans"
+  "formTranslateH\000B\013\n\ttransform\"2\n\rTransfor"
+  "mNode\022!\n\ttransform\030\001 \003(\0132\016.uif.Transform"
+  "\"\260\003\n\013EditCommand\022\021\n\ttimestamp\030\005 \001(\004\022\021\n\tc"
+  "lient_id\030\004 \001(\t\022\'\n\004kind\030\001 \001(\0162\031.uif.EditC"
+  "ommand.EditKind\022\021\n\tparent_id\030\002 \001(\004\022\021\n\tob"
+  "ject_id\030\003 \001(\004\022\"\n\004rect\030\n \001(\0132\022.uif.Rectan"
+  "gleNodeH\000\022\035\n\004text\030\013 \001(\0132\r.uif.TextNodeH\000"
+  "\022\035\n\004path\030\014 \001(\0132\r.uif.PathNodeH\000\022\037\n\005empty"
+  "\030\024 \001(\0132\016.uif.EmptyNodeH\000\022!\n\004clip\030\025 \001(\0132\021"
+  ".uif.ClipRectNodeH\000\022\'\n\ttransform\030\026 \001(\0132\022"
+  ".uif.TransformNodeH\000\"U\n\010EditKind\022\020\n\014APPE"
+  "ND_CHILD\020\000\022\020\n\014REPLACE_NODE\020\001\022\022\n\016CLEANUP_"
+  "CLIENT\020\002\022\021\n\rDELETE_OBJECT\020\003B\006\n\004node\"-\n\007E"
+  "ditReq\022\"\n\010commands\030\002 \003(\0132\020.uif.EditComma"
+  "nd\"\n\n\010EditResp\"!\n\014GetEventsReq\022\021\n\tclient"
+  "_id\030\001 \001(\t\"\034\n\nCloseEvent\022\016\n\006closed\030\001 \001(\010\""
+  "l\n\nMouseEvent\022 \n\006button\030\001 \001(\0162\020.uif.Mous"
+  "eButton\022\036\n\005state\030\002 \001(\0162\017.uif.MouseState\022"
+  "\034\n\010location\030\003 \001(\0132\n.uif.Point\"\?\n\rKeyboar"
+  "dEvent\022\034\n\005state\030\001 \001(\0162\r.uif.KeyState\022\020\n\010"
+  "key_code\030\002 \001(\r\"a\n\014TextHitEvent\022\036\n\005mouse\030"
+  "\001 \001(\0132\017.uif.MouseEvent\022\016\n\006offset\030\002 \001(\r\022\016"
+  "\n\006length\030\003 \001(\r\022\021\n\tobject_id\030\004 \001(\004\"\235\001\n\005Ev"
+  "ent\022 \n\005close\030\n \001(\0132\017.uif.CloseEventH\000\022 \n"
+  "\005mouse\030\013 \001(\0132\017.uif.MouseEventH\000\022!\n\003key\030\014"
+  " \001(\0132\022.uif.KeyboardEventH\000\022$\n\007textHit\030\r "
+  "\001(\0132\021.uif.TextHitEventH\000B\007\n\005event\"\030\n\026Get"
+  "ServerPropertiesReq\"F\n\027GetServerProperti"
+  "esResp\022\024\n\014window_width\030\001 \001(\r\022\025\n\rwindow_h"
+  "eight\030\002 \001(\r\"!\n\020SetClearColorReq\022\r\n\005color"
+  "\030\001 \001(\r\"\023\n\021SetClearColorResp*Q\n\tFontStyle"
+  "\022\025\n\021FONT_STYLE_NORMAL\020\000\022\026\n\022FONT_STYLE_OB"
+  "LIQUE\020\001\022\025\n\021FONT_STYLE_ITALIC\020\002*\310\002\n\nFontW"
+  "eight\022\031\n\025FONT_WEIGHT_UNDEFINED\020\000\022\024\n\020FONT"
+  "_WEIGHT_THIN\020d\022\034\n\027FONT_WEIGHT_EXTRA_LIGH"
+  "T\020\310\001\022\026\n\021FONT_WEIGHT_LIGHT\020\254\002\022\033\n\026FONT_WEI"
+  "GHT_SEMI_LIGHT\020\336\002\022\027\n\022FONT_WEIGHT_NORMAL\020"
+  "\220\003\022\027\n\022FONT_WEIGHT_MEDIUM\020\364\003\022\032\n\025FONT_WEIG"
+  "HT_SEMI_BOLD\020\330\004\022\025\n\020FONT_WEIGHT_BOLD\020\274\005\022\033"
+  "\n\026FONT_WEIGHT_EXTRA_BOLD\020\240\006\022\026\n\021FONT_WEIG"
+  "HT_BLACK\020\204\007\022\034\n\027FONT_WEIGHT_EXTRA_BLACK\020\266"
+  "\007*\300\002\n\013FontStretch\022\032\n\026FONT_STRETCH_UNDEFI"
+  "NED\020\000\022 \n\034FONT_STRETCH_ULTRA_CONDENSED\020\001\022"
+  " \n\034FONT_STRETCH_EXTRA_CONDENSED\020\002\022\032\n\026FON"
+  "T_STRETCH_CONDENSED\020\003\022\037\n\033FONT_STRETCH_SE"
+  "MI_CONDENSED\020\004\022\027\n\023FONT_STRETCH_NORMAL\020\005\022"
+  "\036\n\032FONT_STRETCH_SEMI_EXPANDED\020\006\022\031\n\025FONT_"
+  "STRETCH_EXPANDED\020\007\022\037\n\033FONT_STRETCH_EXTRA"
+  "_EXPANDED\020\010\022\037\n\033FONT_STRETCH_ULTRA_EXPAND"
+  "ED\020\t*m\n\tTextAlign\022\026\n\022TEXT_ALIGN_LEADING\020"
+  "\000\022\027\n\023TEXT_ALIGN_TRAILING\020\001\022\025\n\021TEXT_ALIGN"
+  "_CENTER\020\002\022\030\n\024TEXT_ALIGN_JUSTIFIED\020\003*_\n\016P"
+  "aragraphAlign\022\030\n\024PARAGRAPH_ALIGN_NEAR\020\000\022"
+  "\027\n\023PARAGRAPH_ALIGN_FAR\020\001\022\032\n\026PARAGRAPH_AL"
+  "IGN_CENTER\020\002*\?\n\013PCBeginKind\022\027\n\023PC_BEGINK"
+  "IND_FILLED\020\000\022\027\n\023PC_BEGINKIND_HOLLOW\020\001*7\n"
+  "\tPCEndKind\022\023\n\017PC_ENDKIND_OPEN\020\000\022\025\n\021PC_EN"
+  "DKIND_CLOSED\020\001*\226\001\n\013MouseButton\022\025\n\021MOUSE_"
+  "BUTTON_NONE\020\000\022\025\n\021MOUSE_BUTTON_LEFT\020\001\022\027\n\023"
+  "MOUSE_BUTTON_MIDDLE\020\002\022\026\n\022MOUSE_BUTTON_RI"
+  "GHT\020\003\022\023\n\017MOUSE_BUTTON_X1\020\004\022\023\n\017MOUSE_BUTT"
+  "ON_X2\020\005*L\n\nMouseState\022\024\n\020MOUSE_STATE_NON"
+  "E\020\000\022\022\n\016MOUSE_STATE_UP\020\001\022\024\n\020MOUSE_STATE_D"
+  "OWN\020\002*/\n\010KeyState\022\t\n\005UNSET\020\000\022\014\n\010KEY_DOWN"
+  "\020\001\022\n\n\006KEY_UP\020\0022\362\001\n\013UIFramework\022#\n\004Edit\022\014"
+  ".uif.EditReq\032\r.uif.EditResp\022,\n\tGetEvents"
+  "\022\021.uif.GetEventsReq\032\n.uif.Event0\001\022P\n\023Get"
+  "ServerProperties\022\033.uif.GetServerProperti"
+  "esReq\032\034.uif.GetServerPropertiesResp\022>\n\rS"
+  "etClearColor\022\025.uif.SetClearColorReq\032\026.ui"
+  "f.SetClearColorRespB\035Z\033github.com/Vbitz/"
+  "uif_sharedb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_uif_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_uif_2eproto = {
-  false, false, 5206, descriptor_table_protodef_uif_2eproto, "uif.proto", 
+  false, false, 5218, descriptor_table_protodef_uif_2eproto, "uif.proto", 
   &descriptor_table_uif_2eproto_once, nullptr, 0, 37,
   schemas, file_default_instances, TableStruct_uif_2eproto::offsets,
   file_level_metadata_uif_2eproto, file_level_enum_descriptors_uif_2eproto, file_level_service_descriptors_uif_2eproto,
@@ -7013,9 +7013,14 @@ void TransformRotate::InternalSwap(TransformRotate* other) {
 
 class TransformScale::_Internal {
  public:
+  static const ::uif::Point& size(const TransformScale* msg);
   static const ::uif::Point& center(const TransformScale* msg);
 };
 
+const ::uif::Point&
+TransformScale::_Internal::size(const TransformScale* msg) {
+  return *msg->size_;
+}
 const ::uif::Point&
 TransformScale::_Internal::center(const TransformScale* msg) {
   return *msg->center_;
@@ -7032,20 +7037,24 @@ TransformScale::TransformScale(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 TransformScale::TransformScale(const TransformScale& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_size()) {
+    size_ = new ::uif::Point(*from.size_);
+  } else {
+    size_ = nullptr;
+  }
   if (from._internal_has_center()) {
     center_ = new ::uif::Point(*from.center_);
   } else {
     center_ = nullptr;
   }
-  size_ = from.size_;
   // @@protoc_insertion_point(copy_constructor:uif.TransformScale)
 }
 
 inline void TransformScale::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&center_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&size_) -
-    reinterpret_cast<char*>(&center_)) + sizeof(size_));
+    reinterpret_cast<char*>(&size_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&center_) -
+    reinterpret_cast<char*>(&size_)) + sizeof(center_));
 }
 
 TransformScale::~TransformScale() {
@@ -7057,6 +7066,7 @@ TransformScale::~TransformScale() {
 
 inline void TransformScale::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete size_;
   if (this != internal_default_instance()) delete center_;
 }
 
@@ -7076,11 +7086,14 @@ void TransformScale::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  if (GetArenaForAllocation() == nullptr && size_ != nullptr) {
+    delete size_;
+  }
+  size_ = nullptr;
   if (GetArenaForAllocation() == nullptr && center_ != nullptr) {
     delete center_;
   }
   center_ = nullptr;
-  size_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7090,11 +7103,11 @@ const char* TransformScale::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float size = 1;
+      // .uif.Point size = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          size_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_size(), ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -7135,14 +7148,12 @@ uint8_t* TransformScale::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float size = 1;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_size = this->_internal_size();
-  uint32_t raw_size;
-  memcpy(&raw_size, &tmp_size, sizeof(tmp_size));
-  if (raw_size != 0) {
+  // .uif.Point size = 1;
+  if (this->_internal_has_size()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->_internal_size(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::size(this), target, stream);
   }
 
   // .uif.Point center = 2;
@@ -7169,20 +7180,18 @@ size_t TransformScale::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // .uif.Point size = 1;
+  if (this->_internal_has_size()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *size_);
+  }
+
   // .uif.Point center = 2;
   if (this->_internal_has_center()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *center_);
-  }
-
-  // float size = 1;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_size = this->_internal_size();
-  uint32_t raw_size;
-  memcpy(&raw_size, &tmp_size, sizeof(tmp_size));
-  if (raw_size != 0) {
-    total_size += 1 + 4;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
@@ -7207,15 +7216,11 @@ void TransformScale::MergeFrom(const TransformScale& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from._internal_has_size()) {
+    _internal_mutable_size()->::uif::Point::MergeFrom(from._internal_size());
+  }
   if (from._internal_has_center()) {
     _internal_mutable_center()->::uif::Point::MergeFrom(from._internal_center());
-  }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_size = from._internal_size();
-  uint32_t raw_size;
-  memcpy(&raw_size, &tmp_size, sizeof(tmp_size));
-  if (raw_size != 0) {
-    _internal_set_size(from._internal_size());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -7235,11 +7240,11 @@ void TransformScale::InternalSwap(TransformScale* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TransformScale, size_)
-      + sizeof(TransformScale::size_)
-      - PROTOBUF_FIELD_OFFSET(TransformScale, center_)>(
-          reinterpret_cast<char*>(&center_),
-          reinterpret_cast<char*>(&other->center_));
+      PROTOBUF_FIELD_OFFSET(TransformScale, center_)
+      + sizeof(TransformScale::center_)
+      - PROTOBUF_FIELD_OFFSET(TransformScale, size_)>(
+          reinterpret_cast<char*>(&size_),
+          reinterpret_cast<char*>(&other->size_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TransformScale::GetMetadata() const {

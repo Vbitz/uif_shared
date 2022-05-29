@@ -4444,9 +4444,27 @@ class TransformScale final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCenterFieldNumber = 2,
     kSizeFieldNumber = 1,
+    kCenterFieldNumber = 2,
   };
+  // .uif.Point size = 1;
+  bool has_size() const;
+  private:
+  bool _internal_has_size() const;
+  public:
+  void clear_size();
+  const ::uif::Point& size() const;
+  PROTOBUF_NODISCARD ::uif::Point* release_size();
+  ::uif::Point* mutable_size();
+  void set_allocated_size(::uif::Point* size);
+  private:
+  const ::uif::Point& _internal_size() const;
+  ::uif::Point* _internal_mutable_size();
+  public:
+  void unsafe_arena_set_allocated_size(
+      ::uif::Point* size);
+  ::uif::Point* unsafe_arena_release_size();
+
   // .uif.Point center = 2;
   bool has_center() const;
   private:
@@ -4465,15 +4483,6 @@ class TransformScale final :
       ::uif::Point* center);
   ::uif::Point* unsafe_arena_release_center();
 
-  // float size = 1;
-  void clear_size();
-  float size() const;
-  void set_size(float value);
-  private:
-  float _internal_size() const;
-  void _internal_set_size(float value);
-  public:
-
   // @@protoc_insertion_point(class_scope:uif.TransformScale)
  private:
   class _Internal;
@@ -4481,8 +4490,8 @@ class TransformScale final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::uif::Point* size_;
   ::uif::Point* center_;
-  float size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_uif_2eproto;
 };
@@ -10685,24 +10694,94 @@ inline void TransformRotate::set_allocated_center(::uif::Point* center) {
 
 // TransformScale
 
-// float size = 1;
+// .uif.Point size = 1;
+inline bool TransformScale::_internal_has_size() const {
+  return this != internal_default_instance() && size_ != nullptr;
+}
+inline bool TransformScale::has_size() const {
+  return _internal_has_size();
+}
 inline void TransformScale::clear_size() {
-  size_ = 0;
+  if (GetArenaForAllocation() == nullptr && size_ != nullptr) {
+    delete size_;
+  }
+  size_ = nullptr;
 }
-inline float TransformScale::_internal_size() const {
-  return size_;
+inline const ::uif::Point& TransformScale::_internal_size() const {
+  const ::uif::Point* p = size_;
+  return p != nullptr ? *p : reinterpret_cast<const ::uif::Point&>(
+      ::uif::_Point_default_instance_);
 }
-inline float TransformScale::size() const {
+inline const ::uif::Point& TransformScale::size() const {
   // @@protoc_insertion_point(field_get:uif.TransformScale.size)
   return _internal_size();
 }
-inline void TransformScale::_internal_set_size(float value) {
-  
-  size_ = value;
+inline void TransformScale::unsafe_arena_set_allocated_size(
+    ::uif::Point* size) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(size_);
+  }
+  size_ = size;
+  if (size) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:uif.TransformScale.size)
 }
-inline void TransformScale::set_size(float value) {
-  _internal_set_size(value);
-  // @@protoc_insertion_point(field_set:uif.TransformScale.size)
+inline ::uif::Point* TransformScale::release_size() {
+  
+  ::uif::Point* temp = size_;
+  size_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::uif::Point* TransformScale::unsafe_arena_release_size() {
+  // @@protoc_insertion_point(field_release:uif.TransformScale.size)
+  
+  ::uif::Point* temp = size_;
+  size_ = nullptr;
+  return temp;
+}
+inline ::uif::Point* TransformScale::_internal_mutable_size() {
+  
+  if (size_ == nullptr) {
+    auto* p = CreateMaybeMessage<::uif::Point>(GetArenaForAllocation());
+    size_ = p;
+  }
+  return size_;
+}
+inline ::uif::Point* TransformScale::mutable_size() {
+  ::uif::Point* _msg = _internal_mutable_size();
+  // @@protoc_insertion_point(field_mutable:uif.TransformScale.size)
+  return _msg;
+}
+inline void TransformScale::set_allocated_size(::uif::Point* size) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete size_;
+  }
+  if (size) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::uif::Point>::GetOwningArena(size);
+    if (message_arena != submessage_arena) {
+      size = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, size, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  size_ = size;
+  // @@protoc_insertion_point(field_set_allocated:uif.TransformScale.size)
 }
 
 // .uif.Point center = 2;
